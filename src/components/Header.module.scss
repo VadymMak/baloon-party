@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa; // Set a fallback background color
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 75px; // Set a height for the header
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 120px;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem; // Space between balloons
+  flex-grow: 1; // Make the nav take available space
+
+  .navLink {
+    position: relative; // Make it relative for positioning the pseudo-element
+    display: inline-block; // Allow for padding and margins
+    width: 100px; // Set a width for the balloon
+    height: 130px; // Set a height for the balloon
+    background-image: url("../assets/one-ballon-background-removebg-preview.png"); // Path to the balloon image
+    background-size: cover; // Make the background cover the balloon
+    background-position: center; // Center the background image
+    color: #fff; // Text color
+    text-align: center; // Center text horizontally
+    line-height: 130px; // Center text vertically
+    text-decoration: none; // Remove underline
+    transition: transform 0.3s ease; // Add a hover transition
+
+    &:hover {
+      transform: scale(1.05); // Slightly enlarge on hover for effect
+    }
+  }
+}
+
+/* Responsive Styling for Tablet and Mobile */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem; // Slightly smaller font size for tablets
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none; // Hide nav links on mobile
+  }
+
+  .header {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Show Hamburger on Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+.navOpen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px; /* Adjust based on header height */
+  right: 0;
+  background-color: #f8f9fa;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+
+  .navLink {
+    margin: 10px 0; // Vertical spacing
+    padding: 0.5rem 0; // Padding for mobile
+    font-size: 1.2rem; // Larger font for mobile
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+}
