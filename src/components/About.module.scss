@@ -1,0 +1,24 @@
+.about {
+  padding: 2rem; // Padding for the about section
+  margin-top: -50px; // Negative margin to pull the section up
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); // Light background for the section
+  color: #333; // Text color
+  text-align: left; // Align text to the left
+
+  h2 {
+    font-size: 2.2rem; // Size for the heading
+    margin-bottom: 1rem; // Space below the heading
+    text-indent: 20px;
+  }
+
+  p {
+    font-size: 1.4rem; // Size for the paragraph
+    margin-bottom: 1rem; // Space between paragraphs
+    text-indent: 20px; // Line height for readability
+  }
+}

@@ -1,13 +1,20 @@
-// src/components/Gallery.tsx
 import React from "react";
+import styles from "./Gallery.module.scss"; // Import the SCSS module
 
 const Gallery: React.FC = () => (
-  <section className="gallery">
-    <h2>Our Work</h2>
-    <div className="gallery-grid">
-      <img src="/path/to/image1.jpg" alt="Event 1" />
-      <img src="/path/to/image2.jpg" alt="Event 2" />
-      <img src="/path/to/image3.jpg" alt="Event 3" />
+  <section className={styles.gallery}>
+    <h2>Naša Galéria</h2> {/* Gallery Title in Slovak */}
+    <div className={styles.buttonContainer}>
+      <div className={styles.row}>
+        <button className={styles.customButton}>Button 1</button>
+        <button className={styles.customButton}>Button 2</button>
+        <button className={styles.customButton}>Button 3</button>
+      </div>
+      <div className={styles.row}>
+        <button className={styles.customButton}>Button 4</button>
+        <button className={styles.customButton}>Button 5</button>
+        <button className={styles.customButton}>Button 6</button>
+      </div>
     </div>
   </section>
 );

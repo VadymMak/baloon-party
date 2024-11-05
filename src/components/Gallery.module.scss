@@ -1,0 +1,72 @@
+.gallery {
+  padding: 2rem; // Padding for the gallery section
+  background-color: rgba(255, 255, 255, 0.8); // Light background
+  color: #333; // Text color
+  text-align: center; // Center text
+
+  h2 {
+    font-size: 2.5rem; // Size for the heading
+    margin-bottom: 1.5rem; // Space below the heading
+    color: #2584be; // Color for the heading
+  }
+
+  .buttonContainer {
+    display: flex; // Flex container for buttons
+    flex-wrap: wrap; // Allow buttons to wrap to the next line
+    justify-content: center; // Center the buttons in the container
+    gap: 1rem; // Space between buttons
+
+    .customButton {
+      background-image: url("../assets/gallery-button.jpg"); // Path to the background image
+      background-size: cover; // Cover the entire button
+      background-position: center; // Center the image
+      color: #fff; // Button text color
+      width: 350px; // Fixed width for each button
+      height: 350px; // Fixed height for each button (square)
+      border: none; // Remove border
+      border-radius: 5px; // Rounded corners
+      font-size: 1rem; // Button font size
+      cursor: pointer; // Pointer on hover
+      transition: transform 0.3s ease; // Transition for hover effect
+
+      &:hover {
+        transform: scale(1.05); // Scale effect on hover
+      }
+    }
+  }
+
+  // Media Queries for Responsiveness
+  @media (max-width: 768px) {
+    // Tablet
+    padding: 1.5rem; // Adjust padding for tablet
+    h2 {
+      font-size: 2rem; // Reduce heading size for tablet
+    }
+
+    .buttonContainer {
+      .customButton {
+        width: 250px; // Adjust button width for tablet
+        height: 250px; // Adjust button height for tablet (square)
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    // Mobile
+    padding: 1rem; // Adjust padding for mobile
+    h2 {
+      font-size: 1.5rem; // Reduce heading size for mobile
+    }
+
+    .buttonContainer {
+      .customButton {
+        width: 100%; // Full width on mobile
+        height: 100%; // Full height on mobile (square)
+        aspect-ratio: 1; // Maintain square aspect ratio
+        max-width: 350px; // Maximum width on mobile
+        max-height: 220px; // Maximum height on mobile
+        margin-top: 10px; // Space between buttons
+      }
+    }
+  }
+}
