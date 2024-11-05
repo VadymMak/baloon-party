@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/baloon-party-logo.jpg"; // Ensure the logo path is correct

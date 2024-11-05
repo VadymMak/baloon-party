@@ -1,11 +1,14 @@
 .header {
+  width: 100%;
+
+  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #f8f9fa; // Set a fallback background color
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 75px; // Set a height for the header
+  // background-color: #f8f9fa; // Set a fallback background color
+  background-color: transparent; // Set a fallback background color
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logoContainer {
@@ -14,26 +17,29 @@
 }
 
 .logo {
-  height: 120px;
+  height: 180px;
 }
 
 .nav {
   display: flex;
-  gap: 2rem; // Space between balloons
-  flex-grow: 1; // Make the nav take available space
+  gap: 5rem; /* Initial gap */
+  padding-right: 5rem; /* Initial padding */
+  padding-top: 3rem; /* Initial padding */
+  transition: padding-right 0.3s ease, gap 0.3s ease;
 
   .navLink {
     position: relative; // Make it relative for positioning the pseudo-element
     display: inline-block; // Allow for padding and margins
     width: 100px; // Set a width for the balloon
-    height: 130px; // Set a height for the balloon
+    height: 170px; // Set a height for the balloon
     background-image: url("../assets/one-ballon-background-removebg-preview.png"); // Path to the balloon image
     background-size: cover; // Make the background cover the balloon
     background-position: center; // Center the background image
-    color: #fff; // Text color
+    color: #2584be; // Text color
     text-align: center; // Center text horizontally
-    line-height: 130px; // Center text vertically
+    line-height: 95px; // Adjust this value to control vertical alignment
     text-decoration: none; // Remove underline
+    font-size: 1.5rem;
     transition: transform 0.3s ease; // Add a hover transition
 
     &:hover {
@@ -48,14 +54,24 @@
     padding: 0.75rem 1.5rem;
   }
 
+  .nav {
+    gap: 3rem; /* Slightly smaller gap for tablets */
+    padding-right: 3rem; /* Adjusted padding */
+    padding-top: 2rem; /* Adjusted padding */
+  }
+
   .navLink {
     font-size: 0.9rem; // Slightly smaller font size for tablets
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .nav {
     display: none; // Hide nav links on mobile
+  }
+
+  .logo {
+    height: 100px;
   }
 
   .header {
@@ -66,15 +82,16 @@
 /* Hamburger Menu for Mobile */
 .hamburger {
   display: none;
-  font-size: 1.5rem;
+  font-size: 3rem;
   cursor: pointer;
   color: #333;
 }
 
 /* Show Hamburger on Mobile */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .hamburger {
     display: block;
+    padding-right: 3rem;
   }
 }
 

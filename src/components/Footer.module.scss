@@ -1,30 +1,92 @@
+// src/components/Footer.module.scss
+
 .footer {
+  background-color: #f8f9fa; // Light background color
+  padding: 2rem; // Padding of 2rem for top/bottom and left/right
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center items horizontally
   text-align: center;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  color: #333;
 
-  .social-media {
+  // Contact Info Section
+  .contactInfo {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    justify-content: space-between; // Distribute items evenly
+    align-items: center; // Align items to center vertically
+    width: 100%; // Take full width
+    margin-bottom: 1rem; // Space between icons and text
 
-    a {
-      color: #333;
-      text-decoration: none;
-      font-size: 1rem;
+    // Grouping each contact item
+    .contactGroup {
       display: flex;
-      align-items: center;
+      flex-direction: column; // Arrange icon and text in a column
+      align-items: center; // Center items
+      text-decoration: none; // Remove underline from links
+      color: #333; // Text color
+      margin: 0 1rem; // Space around contact groups
 
-      svg {
-        margin-right: 0.3rem; // Space between icon and text
-        font-size: 1.2rem;
+      span {
+        color: #333;
       }
 
-      &:hover {
-        color: #ff4081; // Hover color
+      .contactItem {
+        display: flex; // Allow for proper alignment
+        flex-direction: column; // Arrange icon and text in a column
+        align-items: center; // Center items
+        height: 80px; // Set a consistent height for vertical alignment
+        text-decoration: none;
+
+        .contactIcon {
+          width: 50px; // Set icon width
+          height: 50px; // Set icon height
+          margin-bottom: 0.5rem; // Space between icon and text
+        }
       }
     }
+  }
+
+  // Social Media Group
+  .socialMediaGroup {
+    display: flex;
+    flex-direction: column; // Arrange social media icons in a column
+    align-items: center; // Center items
+    margin-top: 1rem; // Space above social media
+
+    .socialMedia {
+      display: flex; // Flex container for social icons
+      justify-content: space-around; // Distribute social icons evenly
+      gap: 1rem; // Space between social icons
+
+      .socialItem {
+        display: flex; // Allow for proper alignment
+        align-items: center; // Center items
+        height: 40px; // Set a consistent height for social icons
+
+        .socialIcon {
+          width: 40px; // Set social icon size
+          height: 40px; // Set social icon height
+          transition: transform 0.3s ease; // Transition for hover effect
+
+          &:hover {
+            transform: scale(1.1); // Scale effect on hover
+          }
+        }
+      }
+    }
+
+    // Contact Us text
+    .contactText {
+      margin: 0.5rem 0; // Space around contact text
+      font-weight: bold; // Make text bold
+      color: #333; // Text color
+    }
+  }
+
+  // Text section
+  p,
+  a,
+  span {
+    margin: 0; // Remove default margin
+    color: #333; // Text color
   }
 }

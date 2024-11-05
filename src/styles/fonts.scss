@@ -1,0 +1,17 @@
+/* src/styles/fonts.scss */
+
+@font-face {
+  font-family: "Myriad Pro";
+  src: url("../fonts/MyriadPro-Regular.oft") format("oft"),
+    url("../fonts/MyriadPro-Regular.ttf") format("truetype");
+  font-weight: normal; /* or bold if you have a bold version */
+  font-style: italic; /* for cursive style */
+}
+
+@font-face {
+  font-family: "Arno Pro";
+  src: url("../fonts/ArnoPro-Regular.otf") format("otf"),
+    url("../fonts/ArnoPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

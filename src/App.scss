@@ -1,0 +1,12 @@
+@import "./fonts"; /* Import the font styles */
+/* Apply Arno Pro for all regular text */
+body {
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #e3e3e3, #ddd);
+  font-family: "Arno Pro", serif;
+}
+
+/* Apply Myriad Pro for cursive text */
+.cursive {
+  font-family: "Myriad Pro", cursive;
+}

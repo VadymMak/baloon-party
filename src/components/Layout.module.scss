@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column; // Arrange children in a column
+  min-height: 100vh; // Make the wrapper fill the viewport height
+  max-width: 1200px; // Set maximum width
+  margin: 0 auto;
+  box-sizing: border-box; // Include padding and borders in the total width
+
+  header {
+    // Add styles for your header
+    padding: 1rem; // Example padding
+  }
+
+  main {
+    flex-grow: 1; // Allow main to grow and take available space
+    padding: 1rem; // Optional padding for content
+  }
+
+  footer {
+    padding: 1rem; // Padding for the footer
+    text-align: center; // Center footer text
+  }
+}
