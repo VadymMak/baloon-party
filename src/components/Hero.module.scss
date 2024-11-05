@@ -1,0 +1,51 @@
+// src/components/Hero.module.scss
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; // Change to flex-start to push content up
+  height: 100vh; // Full viewport height
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); // Light background with 70% opacity
+  color: #333; // Text color
+  text-align: center; // Center text
+  backdrop-filter: blur(10px); // Optional: add a blur effect to the background
+  padding-top: 10px; // Add some padding from the top
+
+  h1 {
+    font-size: 3rem; // Large heading size
+    font-family: cursive;
+    margin-bottom: 1rem; // Space below the heading
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #b11c1a;
+  }
+
+  p {
+    font-size: 2rem; // Increase paragraph size (adjust as needed)
+    margin-bottom: 2rem; // Space below the paragraph
+    font-family: cursive;
+    text-transform: uppercase;
+    color: #2584be; // Change paragraph color to #2584BE
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); // Shadow for better visibility
+  }
+
+  button {
+    background-color: #2584be; // Button color
+    color: #fff; // Button text color
+    padding: 1rem 2rem; // Button padding
+    border: none; // Remove border
+    border-radius: 5px; // Rounded corners
+    font-size: 1.2rem; // Button font size
+    cursor: pointer; // Pointer on hover
+    transition: background-color 0.3s ease; // Transition for hover effect
+
+    &:hover {
+      background-color: #1e6b9a; // Darker shade on hover
+    }
+  }
+}

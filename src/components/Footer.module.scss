@@ -1,5 +1,3 @@
-// src/components/Footer.module.scss
-
 .footer {
   background-color: #f8f9fa; // Light background color
   padding: 2rem; // Padding of 2rem for top/bottom and left/right
@@ -11,10 +9,11 @@
   // Contact Info Section
   .contactInfo {
     display: flex;
-    justify-content: space-between; // Distribute items evenly
+    flex-wrap: wrap; // Allow wrapping for smaller screens
+    justify-content: space-around; // Distribute items evenly
     align-items: center; // Align items to center vertically
     width: 100%; // Take full width
-    margin-bottom: 1rem; // Space between icons and text
+    margin-bottom: 1rem; // Space below the contact info
 
     // Grouping each contact item
     .contactGroup {
@@ -40,6 +39,11 @@
           width: 50px; // Set icon width
           height: 50px; // Set icon height
           margin-bottom: 0.5rem; // Space between icon and text
+          transition: transform 0.3s ease; // Transition for hover effect
+
+          &:hover {
+            transform: scale(1.1); // Scale effect on hover
+          }
         }
       }
     }
@@ -88,5 +92,32 @@
   span {
     margin: 0; // Remove default margin
     color: #333; // Text color
+  }
+
+  // Media Queries for Responsiveness
+  @media (max-width: 768px) {
+    // Tablet
+    padding: 1.5rem; // Reduced padding for tablet
+    .contactInfo {
+      flex-direction: row; // Arrange items in a row on tablet
+      align-items: center; // Center items
+    }
+    .contactGroup {
+      margin: 0 1rem; // Horizontal space around contact groups
+    }
+  }
+
+  @media (max-width: 480px) {
+    // Mobile
+    padding: 1rem; // Reduced padding for mobile
+    .contactInfo {
+      flex-direction: column; // Stack items vertically on mobile
+      .contactGroup {
+        margin: 0.5rem 0; // Smaller vertical space on mobile
+      }
+    }
+    .socialMedia {
+      flex-direction: column; // Stack social media icons vertically on mobile
+    }
   }
 }
