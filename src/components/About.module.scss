@@ -11,14 +11,34 @@
   text-align: left; // Align text to the left
 
   h2 {
-    font-size: 2.2rem; // Size for the heading
+    font-size: 2.2rem; // Default size for the heading
     margin-bottom: 1rem; // Space below the heading
     text-indent: 20px;
   }
 
   p {
-    font-size: 1.4rem; // Size for the paragraph
+    font-size: 1.4rem; // Default size for the paragraph
     margin-bottom: 1rem; // Space between paragraphs
-    text-indent: 20px; // Line height for readability
+    text-indent: 20px; // Indentation for paragraph
+  }
+
+  // Media query for tablet view (planchet)
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.8rem; // Reduce heading size for tablet
+    }
+    p {
+      font-size: 1.2rem; // Reduce paragraph size for tablet
+    }
+  }
+
+  // Media query for mobile view
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.5rem; // Smaller heading size for mobile
+    }
+    p {
+      font-size: 1rem; // Smaller paragraph size for mobile
+    }
   }
 }
