@@ -1,0 +1,22 @@
+.aboutPage {
+  background: url("../assets/about-bkg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100%; /* Use 100% to avoid horizontal overflow caused by scrollbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}

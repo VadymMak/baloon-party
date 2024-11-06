@@ -1,11 +1,13 @@
 /* Header Styling */
 .header {
-  width: 100%;
+  // width: 100%; /* Avoids overflow issues caused by 100vw */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: transparent;
+  background: transparent;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-x: hid;
 }
 
 .logoContainer {
@@ -15,13 +17,15 @@
 
 .logo {
   height: 180px;
+  max-height: 100%; /* Prevents logo from overflowing */
+  object-fit: contain; /* Ensures logo aspect ratio is maintained */
 }
 
 .nav {
   display: flex;
-  gap: 6rem; /* Initial gap */
-  padding-right: 3rem; /* Initial padding */
-  padding-top: 1rem; /* Initial padding */
+  gap: 6rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
   transition: padding-right 0.3s ease, gap 0.3s ease;
 }
 
@@ -39,49 +43,42 @@
   text-decoration: none;
   font-size: 1.5rem;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .navLink:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover for effect */
+  transform: scale(1.05);
 }
 
-/* Mobile Styles */
+/* Tablet Styles */
 @media (max-width: 1024px) {
-  .header {
-    padding: 0.75rem 1.5rem;
-  }
-
   .nav {
     gap: 3rem;
-    padding-right: 3rem;
+    // padding-right: 3rem;
     padding-top: 2rem;
   }
 
   .navLink {
-    font-size: 0.9rem; /* Smaller font size for tablets */
+    font-size: 1.3rem;
   }
 }
 
+/* Mobile Styles */
 @media (max-width: 800px) {
+  .logo {
+    height: 100px; /* Resize logo on mobile */
+  }
+
   .nav {
     display: none; /* Hide navigation links on mobile */
   }
 
-  .logo {
-    height: 100px;
-  }
-
-  .header {
-    padding: 0.5rem 1rem;
-  }
-
-  /* Show the hamburger menu on mobile */
   .hamburger {
     display: block;
     font-size: 3rem;
     cursor: pointer;
     color: #333;
-    padding-right: 3rem;
+    padding-right: 2rem;
   }
 }
 
@@ -92,9 +89,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black backdrop */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 5;
-  display: none; /* Initially hidden */
+  display: none;
 }
 
 /* Mobile Navigation Menu */
@@ -102,7 +99,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 70px; /* Adjust this based on header height */
+  top: 70px; /* Adjust based on header height */
   right: 0;
   background-color: #f8f9fa;
   width: 100%;
@@ -112,9 +109,9 @@
 }
 
 .navOpen .navLink {
-  margin: 10px 0; /* Vertical spacing */
+  margin: 10px 0;
   padding: 0.5rem 0;
-  font-size: 1.2rem; /* Larger font size for mobile */
+  font-size: 1.2rem;
   border-bottom: 1px solid #ddd;
   text-align: center;
 }

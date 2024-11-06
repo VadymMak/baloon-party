@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/baloon-party-logo.jpg"; // Ensure the logo path is correct
+import Logo from "../assets/logo-new.svg"; // Ensure the logo path is correct
 import styles from "./Header.module.scss";
 import useWindowSize from "../hooks/useWindowSize"; // Import the useWindowSize hook
 
@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
   const { width } = useWindowSize();
 
   // Ensure width is defined before rendering the hamburger
-  const isMobile = width !== undefined && width <= 768;
+  const isMobile = width !== undefined && width <= 800;
 
   return (
     <header className={styles.header}>

@@ -1,70 +1,15 @@
-/* Layout.module.scss */
 .wrapper {
-  position: relative; /* Ensure positioning context for the side menu */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%; /* Use 100% to avoid horizontal overflow caused by scrollbar */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-main {
+.mainContent {
   flex: 1;
-  padding: 2rem;
-  transition: margin-left 0.3s ease; /* Smooth transition for content shift */
-}
-
-/* Ensure the footer stays at the bottom */
-footer {
-  margin-top: auto; /* Push footer to the bottom */
-}
-
-/* When the side menu is open, shift the main content to the right */
-.wrapper.open .main {
-  margin-left: 250px; /* Space for the side menu */
-}
-
-/* Overlay for dimming background when the side menu is open */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 999; /* Behind the menu */
-  display: none; /* Hidden by default */
-}
-
-.wrapper.open .overlay {
-  display: block; /* Show overlay when side menu is open */
-}
-
-// src/components/SideMenu.module.scss
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 90;
-  pointer-events: auto; /* Allow interaction only with the backdrop */
-}
-
-/* Add style for mobile and tablet screens */
-@media (max-width: 768px) {
-  main {
-    padding: 1.5rem; /* Adjust padding for tablet */
-  }
-
-  /* When the menu is open, shift the main content to the right */
-  .wrapper.open .main {
-    margin-left: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 1rem; /* Reduced padding for mobile */
-  }
+  display: flex;
+  flex-direction: column;
+  background: none; /* Transparent to allow the AboutPage background to show */
 }

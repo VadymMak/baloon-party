@@ -1,12 +1,15 @@
-@import "./fonts"; /* Import the font styles */
-/* Apply Arno Pro for all regular text */
-body {
-  margin: 0 auto;
-  background: linear-gradient(to bottom, #e3e3e3, #ddd);
-  font-family: "Arno Pro", serif;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and border do not affect width/height */
 }
 
-/* Apply Myriad Pro for cursive text */
-.cursive {
-  font-family: "Myriad Pro", cursive;
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
