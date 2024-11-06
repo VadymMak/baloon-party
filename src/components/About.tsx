@@ -5,16 +5,22 @@ const About: React.FC = () => (
   <section className={styles.about}>
     <h2>O nás</h2>
     <p>
-      Vitajte v Balon Party! Sme odborníci na balónové dekorácie a organizovanie
-      osláv. Našim cieľom je pridať do každého podujatia trochu kúzla a radosti
-      pomocou našich krásnych balónov a jedinečných dizajnov.
+      Vitajte na stránke Baloon Party00! Sme profesionáli v tvorbe dekorácií a
+      fotostien pre vaše výnimočné chvíle v Trenčíne a celom Trenčianskom kraji.
+      Naším cieľom je priniesť do vášho sviatočného dňa jedinečnú atmosféru a
+      farebnú krásu, ktorá zanechá spomienky plné radosti a šťastia.
     </p>
     <p>
-      Naša spoločnosť sa zaoberá poskytovaním širokej škály služieb, od
-      dekorovania svadieb a narodeninových osláv až po tematické párty. Každý
-      projekt sa starostlivo plánuje, aby sme vyhoveli vašim potrebám a
-      predstavám. Nechajte nás spríjemniť váš špeciálny deň!
+      Milujeme prinášať svetlé emócie a robiť oslavy nezabudnuteľnými. Či už
+      plánujete svadbu, narodeninovú oslavu, firemný večierok alebo inú
+      špeciálnu udalosť, postaráme sa o to, aby bola výnimočná.
     </p>
+    <p>
+      Ponúkame tiež možnosť vytvoriť individuálny dizajn presne podľa vašich
+      predstáv. Spolu s vami premeníme vaše nápady na skutočnosť a zabezpečíme,
+      aby výzdoba dokonale ladila s vaším štýlom a charakterom udalosti.
+    </p>
+    <p>Ďakujeme, že nám dôverujete s vašimi najkrajšími momentmi!</p>
   </section>
 );
 
