@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="sk">
+  <!-- Default to Slovak -->
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+
+    <!-- Prevent Google Translate -->
+    <meta name="google" content="notranslate" />
 
     <!-- SEO Meta Tags -->
     <meta
@@ -73,6 +77,22 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>Balóón Party</title>
+
+    <!-- Add JS to dynamically set the lang attribute (if needed) -->
+    <script>
+      // Dynamically update the language attribute based on the current language (sk or uk)
+      document.documentElement.lang = "sk"; // Or dynamically based on your app's language context
+
+      // Prevent translation on specific languages (in case JS is enabled)
+      if (
+        document.documentElement.lang !== "sk" &&
+        document.documentElement.lang !== "uk"
+      ) {
+        document
+          .querySelector('meta[name="google"]')
+          .setAttribute("content", "notranslate");
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

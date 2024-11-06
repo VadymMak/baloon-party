@@ -3,15 +3,24 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import SideMenu from "./SideMenu"; // Import the SideMenu component
+import useWindowSize from "../hooks/useWindowSize"; // Import your custom useWindowSize hook
 
 import styles from "./Layout.module.scss";
 
 const Layout: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const { width } = useWindowSize(); // Track window width
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+
+  // Close the menu when window size exceeds 768px (desktop view)
+  useEffect(() => {
+    if (width && width > 768) {
+      setIsNavOpen(false); // Close the menu on desktop view
+    }
+  }, [width]); // Effect will run when width changes
 
   // Disable/enable scroll when the menu is open/closed
   useEffect(() => {
