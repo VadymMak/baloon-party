@@ -1,6 +1,6 @@
+/* styles for Header.module.scss */
 .header {
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,66 +19,14 @@
 
 .nav {
   display: flex;
-  gap: 5rem; /* Initial gap */
-  padding-right: 5rem; /* Initial padding */
-  padding-top: 3rem; /* Initial padding */
+  gap: 5rem;
+  padding-right: 5rem;
+  padding-top: 3rem;
   transition: padding-right 0.3s ease, gap 0.3s ease;
-
-  .navLink {
-    position: relative; // Make it relative for positioning the pseudo-element
-    display: inline-block; // Allow for padding and margins
-    width: 100px; // Set a width for the balloon
-    height: 170px; // Set a height for the balloon
-    background-image: url("../assets/one-ballon-background-removebg-preview.png"); // Path to the balloon image
-    background-size: cover; // Make the background cover the balloon
-    background-position: center; // Center the background image
-    color: #2584be; // Text color
-    text-align: center; // Center text horizontally
-    line-height: 95px; // Adjust this value to control vertical alignment
-    text-decoration: none; // Remove underline
-    font-size: 1.5rem;
-    transition: transform 0.3s ease; // Add a hover transition
-
-    &:hover {
-      transform: scale(1.05); // Slightly enlarge on hover for effect
-    }
-  }
 }
 
-/* Responsive Styling for Tablet and Mobile */
-@media (max-width: 1024px) {
-  .header {
-    padding: 0.75rem 1.5rem;
-  }
-
-  .nav {
-    gap: 3rem; /* Slightly smaller gap for tablets */
-    padding-right: 3rem; /* Adjusted padding */
-    padding-top: 2rem; /* Adjusted padding */
-  }
-
-  .navLink {
-    font-size: 0.9rem; // Slightly smaller font size for tablets
-  }
-}
-
-@media (max-width: 800px) {
-  .nav {
-    display: none; // Hide nav links on mobile
-  }
-
-  .logo {
-    height: 100px;
-  }
-
-  .header {
-    padding: 0.5rem 1rem;
-  }
-}
-
-/* Hamburger Menu for Mobile */
 .hamburger {
-  display: none;
+  display: none; /* Initially hidden */
   font-size: 3rem;
   cursor: pointer;
   color: #333;
@@ -87,28 +35,11 @@
 /* Show Hamburger on Mobile */
 @media (max-width: 800px) {
   .hamburger {
-    display: block;
+    display: block; /* Show hamburger icon on small screens */
     padding-right: 3rem;
   }
-}
 
-.navOpen {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 70px; /* Adjust based on header height */
-  right: 0;
-  background-color: #f8f9fa;
-  width: 100%;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-
-  .navLink {
-    margin: 10px 0; // Vertical spacing
-    padding: 0.5rem 0; // Padding for mobile
-    font-size: 1.2rem; // Larger font for mobile
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+  .nav {
+    display: none; /* Hide navigation links on mobile */
   }
 }

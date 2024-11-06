@@ -48,6 +48,7 @@
       .customButton {
         width: 250px; // Adjust button width for tablet
         height: 250px; // Adjust button height for tablet (square)
+        font-size: 1.2rem;
       }
     }
   }
@@ -67,6 +68,7 @@
         max-width: 350px; // Maximum width on mobile
         max-height: 220px; // Maximum height on mobile
         margin-top: 10px; // Space between buttons
+        font-size: 1rem;
       }
     }
   }

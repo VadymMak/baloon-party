@@ -1,0 +1,47 @@
+.sideMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px; /* or any width for your side menu */
+  height: 100vh;
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10; /* Ensure it's above content */
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    justify-content: center;
+    padding: 120% 40px;
+    font-size: 1.5rem;
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #ff6347; /* Change color on hover */
+      transform: translateX(10px); /* Slight movement on hover */
+    }
+  }
+}
+
+.sideMenu.open {
+  transform: translateX(0);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5; /* Backdrop layer under the side menu */
+  cursor: pointer;
+}
