@@ -21,7 +21,7 @@ const Footer: React.FC = () => (
       {/* Phone Group */}
       <div className={styles.contactGroup}>
         <a href="tel:+123456789" className={styles.contactItem}>
-          <img src={phoneImage} alt="Phone" className={styles.contactIcon} />
+          <img src={phoneImage} alt="Phone" className={styles.phoneIcon} />
           <span>Phone: +421(95)026-63-20</span>
         </a>
       </div>

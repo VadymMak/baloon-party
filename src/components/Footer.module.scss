@@ -44,8 +44,8 @@ span {
         text-decoration: none;
 
         .contactIcon {
-          width: 90px; // Set icon width
-          height: 90px; // Set icon height
+          width: 80px; // Set icon width
+          height: 80px; // Set icon height
           margin-bottom: 0.5rem; // Space between icon and text
           transition: transform 0.3s ease; // Transition for hover effect
 
@@ -55,9 +55,10 @@ span {
         }
 
         .phoneIcon {
-          width: 120px; // Set icon width
-          height: 100px; // Set icon height
-          margin-bottom: 3rem; // Space between icon and text
+          padding-top: 10px;
+          width: 80px; // Set icon width
+          height: 80px; // Set icon height
+          margin-bottom: 0.6rem; // Space between icon and text
           transition: transform 0.3s ease; // Transition for hover effect
 
           &:hover {
@@ -134,5 +135,5 @@ span {
 }
 
 .property {
-  padding-top: 20px;
+  padding-top: 30px;
 }
