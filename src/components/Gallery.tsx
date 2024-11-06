@@ -13,9 +13,8 @@ const Gallery: React.FC = () => (
       <div className={styles.row}>
         <button className={styles.customButton}>
           <span>Kvetinové</span>
-          <br />
-          <span>oblúky</span>
         </button>
+
         <button className={styles.customButton}>Prázdniny</button>
         <button className={styles.customButton}>Darček</button>
       </div>
