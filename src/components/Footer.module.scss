@@ -1,11 +1,3 @@
-// Text section
-p,
-a,
-span {
-  margin: 0; // Remove default margin
-  color: #333; // Text color
-}
-
 .footer {
   background-color: #f8f9fa; // Light background color
   padding: 2rem; // Padding of 2rem for top/bottom and left/right
@@ -23,47 +15,32 @@ span {
     width: 100%; // Take full width
     margin-bottom: 1rem; // Space below the contact info
 
-    // Grouping each contact item
     .contactGroup {
       display: flex;
-      flex-direction: column; // Arrange icon and text in a column
-      align-items: center; // Center items
-      text-decoration: none; // Remove underline from links
-      color: #333; // Text color
-      margin: 0 1rem; // Space around contact groups
-
-      span {
-        color: #333;
-      }
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      margin: 0 1rem;
 
       .contactItem {
-        display: flex; // Allow for proper alignment
-        flex-direction: column; // Arrange icon and text in a column
-        align-items: center; // Center items
-        height: 80px; // Set a consistent height for vertical alignment
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
         text-decoration: none;
 
         .contactIcon {
-          width: 80px; // Set icon width
-          height: 80px; // Set icon height
-          margin-bottom: 0.5rem; // Space between icon and text
-          transition: transform 0.3s ease; // Transition for hover effect
-
-          &:hover {
-            transform: scale(1.1); // Scale effect on hover
-          }
+          width: 80px;
+          height: 80px;
+          margin-bottom: 0.5rem;
         }
 
         .phoneIcon {
           padding-top: 10px;
-          width: 80px; // Set icon width
-          height: 80px; // Set icon height
-          margin-bottom: 0.6rem; // Space between icon and text
-          transition: transform 0.3s ease; // Transition for hover effect
-
-          &:hover {
-            transform: scale(1.1); // Scale effect on hover
-          }
+          width: 80px;
+          height: 80px;
+          margin-bottom: 0.6rem;
         }
       }
     }
@@ -72,64 +49,62 @@ span {
   // Social Media Group
   .socialMediaGroup {
     display: flex;
-    flex-direction: column; // Arrange social media icons in a column
-    align-items: center; // Center items
-    margin-top: 1rem; // Space above social media
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
 
     .socialMedia {
-      display: flex; // Flex container for social icons
-      justify-content: space-around; // Distribute social icons evenly
-      gap: 1rem; // Space between social icons
+      display: flex;
+      justify-content: center; // Center social media icons
+      gap: 1.2rem; // Increased gap between icons
+      flex-wrap: wrap; // Allow icons to wrap to next line on small screens
+      width: 100%; // Ensure it takes full width on mobile
 
       .socialItem {
-        display: flex; // Allow for proper alignment
-        align-items: center; // Center items
-        height: 40px; // Set a consistent height for social icons
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 70px; // Set a consistent size for each social icon
 
         .socialIcon {
-          width: 70px; // Set social icon size
-          height: 70px; // Set social icon height
-          transition: transform 0.3s ease; // Transition for hover effect
+          width: 70px;
+          height: 70px;
+          transition: transform 0.3s ease;
 
           &:hover {
-            transform: scale(1.1); // Scale effect on hover
+            transform: scale(1.1); // Hover effect
           }
         }
       }
     }
 
-    // Contact Us text
     .contactText {
-      margin: 0.5rem 0; // Space around contact text
-      font-weight: bold; // Make text bold
-      color: #333; // Text color
+      margin: 0.5rem 0;
+      font-weight: bold;
+      color: #333;
     }
   }
 
   // Media Queries for Responsiveness
   @media (max-width: 768px) {
-    // Tablet
-    padding: 1.5rem; // Reduced padding for tablet
     .contactInfo {
-      flex-direction: row; // Arrange items in a row on tablet
-      align-items: center; // Center items
-    }
-    .contactGroup {
-      margin: 0 1rem; // Horizontal space around contact groups
+      flex-direction: column; // Row for tablet
+      align-items: center;
     }
   }
 
   @media (max-width: 480px) {
-    // Mobile
     padding: 1rem; // Reduced padding for mobile
     .contactInfo {
-      flex-direction: column; // Stack items vertically on mobile
+      flex-direction: column; // Stack contact info vertically
       .contactGroup {
-        margin: 0.5rem 0; // Smaller vertical space on mobile
+        margin: 0.9rem 0; // Smaller vertical space on mobile
       }
     }
     .socialMedia {
-      flex-direction: column; // Stack social media icons vertically on mobile
+      flex-direction: column; // Stack social media icons vertically
+      gap: 1.5rem; // Reduce space between social icons
     }
   }
 }

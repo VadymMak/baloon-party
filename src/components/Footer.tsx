@@ -7,6 +7,7 @@ import whatsappImg from "../assets/icons/whatsapp.jpg";
 import envelopImage from "../assets/icons/envelop.jpg";
 import phoneImage from "../assets/icons/phones.jpg";
 import facebookImg from "../assets/icons/facebook.jpg";
+import tiktokIcon from "../assets/icons/tiktok.jpg";
 
 const Footer: React.FC = () => (
   <footer className={styles.footer}>
@@ -41,6 +42,18 @@ const Footer: React.FC = () => (
             />
           </a>
           <a
+            href="https://itiktok.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialItem}
+          >
+            <img
+              src={tiktokIcon}
+              alt="Instagram"
+              className={styles.socialIcon}
+            />
+          </a>
+          <a
             href="https://t.me/yourusername"
             target="_blank"
             rel="noopener noreferrer"
@@ -65,7 +78,7 @@ const Footer: React.FC = () => (
             />
           </a>
           <a
-            href="https://wa.me/yourphonenumber"
+            href="https://facebook/yourphonenumber"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}
