@@ -5,7 +5,8 @@ import instagramImg from "../assets/icons/instagram.jpg";
 import telegramImg from "../assets/icons/telegram.jpg";
 import whatsappImg from "../assets/icons/whatsapp.jpg";
 import envelopImage from "../assets/icons/envelop.jpg";
-import phoneImage from "../assets/icons/phone.jpg";
+import phoneImage from "../assets/icons/phones.jpg";
+import facebookImg from "../assets/icons/facebook.jpg";
 
 const Footer: React.FC = () => (
   <footer className={styles.footer}>
@@ -63,12 +64,23 @@ const Footer: React.FC = () => (
               className={styles.socialIcon}
             />
           </a>
+          <a
+            href="https://wa.me/yourphonenumber"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialItem}
+          >
+            <img
+              src={facebookImg}
+              alt="Face Book"
+              className={styles.socialIcon}
+            />
+          </a>
         </div>
-        <p className={styles.contactText}>Contact Us</p>{" "}
-        {/* Text under social icons */}
+        {/* <p className={styles.contactText}>Contact Us</p> */}
       </div>
     </div>
-    <p>© 2024 Balon Party</p>
+    <p className={styles.property}>© 2024 Balon Party</p>
   </footer>
 );
 

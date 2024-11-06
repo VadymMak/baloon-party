@@ -11,9 +11,7 @@ const Gallery: React.FC = () => (
         <button className={styles.customButton}>Krst dieťaťa</button>
       </div>
       <div className={styles.row}>
-        <button className={styles.customButton}>
-          <span>Kvetinové</span>
-        </button>
+        <button className={styles.customButton}>Kvetinové</button>
 
         <button className={styles.customButton}>Prázdniny</button>
         <button className={styles.customButton}>Darček</button>
