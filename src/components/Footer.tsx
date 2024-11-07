@@ -16,14 +16,14 @@ const Footer: React.FC = () => (
       <div className={styles.contactGroup}>
         <a href="mailto:your-email@example.com" className={styles.contactItem}>
           <img src={envelopImage} alt="Email" className={styles.contactIcon} />
-          <span>Email: baloon-party00@gmail.com</span>
+          <span>baloon-party00@gmail.com</span>
         </a>
       </div>
       {/* Phone Group */}
       <div className={styles.contactGroup}>
         <a href="tel:+123456789" className={styles.contactItem}>
           <img src={phoneImage} alt="Phone" className={styles.phoneIcon} />
-          <span>Phone: +421(95)026-63-20</span>
+          <span>+421(95)026-63-20</span>
         </a>
       </div>
       {/* Social Media Group */}
@@ -93,7 +93,7 @@ const Footer: React.FC = () => (
         {/* <p className={styles.contactText}>Contact Us</p> */}
       </div>
     </div>
-    <p className={styles.property}>© 2024 Balon Party</p>
+    <p className={styles.property}>© 2024 Balónová párty</p>
   </footer>
 );
 
