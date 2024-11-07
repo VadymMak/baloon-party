@@ -1,0 +1,214 @@
+.priceList {
+  background-image: url("/assets/price-list-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 100px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.pageTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #bc6ec7;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+}
+
+ul {
+  margin-top: 220px;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul li {
+  font-size: 2rem;
+  margin: 10px 0;
+  font-family: cursive;
+  width: 100%;
+  text-align: center;
+  color: #057fb0;
+}
+
+.specialOffer {
+  font-size: 1.5rem;
+  font-family: "Arial", sans-serif;
+  color: #057fb0;
+  margin-top: 20px;
+  line-height: 1.5;
+  text-align: left;
+  text-indent: 20px;
+  padding: 0 200px;
+}
+
+.personalCalculation {
+  font-size: 2rem;
+  font-family: "Arial", sans-serif;
+  color: #b24365;
+  margin-top: 20px;
+  line-height: 1.5;
+  text-align: left;
+  text-indent: 20px;
+  padding: 0 200px;
+}
+
+.contactGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align left and right elements */
+  margin-top: 15px;
+  gap: 10px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.phoneIcon {
+  width: 40px;
+  height: auto;
+}
+
+.contactItem {
+  color: #057fb0;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  padding: 0 20px;
+
+  .instagramIcon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .balonPartyText {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: #bc6ec7;
+    font-family: cursive;
+  }
+}
+
+.qrCode img {
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .closeButton {
+    font-size: 2.5rem;
+  }
+
+  ul li {
+    font-size: 1.3rem;
+  }
+
+  .instagramIcon img,
+  .qrCode img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .topBar {
+    padding: 0 30px;
+  }
+
+  .logo {
+    width: 35px;
+  }
+
+  .balonPartyText {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .priceList {
+    padding: 15px;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+
+  .closeButton {
+    font-size: 2rem;
+  }
+
+  ul li {
+    font-size: 1.2rem;
+    margin: 8px 0;
+  }
+
+  .instagramIcon img,
+  .qrCode img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .topBar {
+    padding: 0 30px;
+  }
+
+  .logo {
+    width: 30px;
+  }
+
+  .balonPartyText {
+    font-size: 1.1rem;
+  }
+
+  .specialOffer {
+    font-size: 1.3rem;
+    padding: 0 10px;
+  }
+}

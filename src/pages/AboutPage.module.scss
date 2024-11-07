@@ -28,3 +28,20 @@ p {
   color: #1e88e5;
   font-family: cursive;
 }
+
+.priceListLink {
+  margin-top: 2rem;
+  text-align: center;
+
+  a {
+    color: #2584be;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #1a5a85;
+    }
+  }
+}

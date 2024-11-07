@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage"; // Import ErrorPage
 import AboutPage from "./pages/AboutPage";
+import PriceList from "./components/PriceList";
 
 const AppRoutes: React.FC = () => (
   <Routes>
@@ -15,6 +16,7 @@ const AppRoutes: React.FC = () => (
       <Route path="services" element={<AboutPage />} />
       <Route path="gallery" element={<Gallery />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="/price-list" element={<PriceList />} />
 
       {/* Catch-all route for unmatched paths */}
       <Route path="*" element={<ErrorPage />} />

@@ -1,11 +1,11 @@
-// AboutPage.tsx
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./AboutPage.module.scss";
 
 const AboutPage: React.FC = () => {
   return (
     <div className={styles.aboutPage}>
-      <h1>Vitajte na stránke Baloon Party00!</h1>
+      <h1>Vitajte na stránke Baloon Party!</h1>
       <p>
         Sme tím profesionálov, ktorí sa špecializujú na tvorbu dekorácií a
         fotostien pre vaše najvýznamnejšie chvíle v Trenčíne a celom
@@ -38,6 +38,11 @@ const AboutPage: React.FC = () => {
         pomohli urobiť vašu oslavu nezabudnuteľnou, plnou radosti, farieb a
         krásy. Tešíme sa na spoluprácu s vami!
       </p>
+
+      {/* Link to the Price List page */}
+      <div className={styles.priceListLink}>
+        <Link to="/price-list">View Our Price List</Link>
+      </div>
     </div>
   );
 };
