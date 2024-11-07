@@ -46,8 +46,8 @@
 
     .buttonContainer {
       .customButton {
-        width: 250px; // Adjust button width for tablet
-        height: 250px; // Adjust button height for tablet (square)
+        width: 240px; // Adjust button width for tablet
+        height: 240px; // Adjust button height for tablet (square)
         font-size: 1.2rem;
       }
     }
@@ -62,10 +62,8 @@
 
     .buttonContainer {
       .customButton {
-        width: 100%; // Full width on mobile
-        height: 100%; // Full height on mobile (square)
         aspect-ratio: 1; // Maintain square aspect ratio
-        max-width: 350px; // Maximum width on mobile
+        max-width: 340px; // Maximum width on mobile
         max-height: 220px; // Maximum height on mobile
         margin-top: 10px; // Space between buttons
         font-size: 1rem;

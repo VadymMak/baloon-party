@@ -12,7 +12,6 @@ const Gallery: React.FC = () => (
       </div>
       <div className={styles.row}>
         <button className={styles.customButton}>Kvetinové</button>
-
         <button className={styles.customButton}>Prázdniny</button>
         <button className={styles.customButton}>Darček</button>
       </div>
