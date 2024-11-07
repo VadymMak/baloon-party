@@ -14,6 +14,13 @@ const PriceList: React.FC = () => {
     navigate(-1);
   };
 
+  const phoneNumber = "+421(95)026-63-20"; // Define your phone number
+  const instagramProfileUrl = `https://www.instagram.com/username${phoneNumber.replace(
+    /[^\w]/g,
+    ""
+  )}`;
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <div className={styles.priceList}>
       <div className={styles.topBar}>
@@ -47,7 +54,12 @@ const PriceList: React.FC = () => {
         {/* Phone Section */}
         <div className={styles.contactGroup}>
           <img src={phoneImg} alt="Phone" className={styles.phoneIcon} />
-          <span className={styles.contactItem}>+421(95)026-63-20</span>
+          <a
+            href={isMobile ? `tel:${phoneNumber}` : instagramProfileUrl}
+            className={styles.contactItem}
+          >
+            {phoneNumber}
+          </a>
         </div>
 
         {/* Instagram and Balón Party Text */}
