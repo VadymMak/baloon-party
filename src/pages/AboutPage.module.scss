@@ -3,7 +3,6 @@
     fixed;
   background-size: cover;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,13 +10,16 @@
   color: #333;
   font-size: 1.6rem;
   line-height: 1.6;
+  padding: 0 20px; /* Add padding to prevent content from touching the edges on mobile */
 }
 
 h1 {
   font-size: 2.4rem;
+  margin-top: -20px; /* Pull title closer to top */
   margin-bottom: 1rem;
   color: #b11b1a;
   font-family: cursive;
+  text-align: center; /* Center text on mobile for better alignment */
 }
 
 p {
@@ -27,6 +29,7 @@ p {
   text-indent: 20px;
   color: #1e88e5;
   font-family: cursive;
+  text-align: center; /* Center text on mobile */
 }
 
 .priceListLink {
@@ -43,5 +46,75 @@ p {
     &:hover {
       color: #1a5a85;
     }
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: 40px 15px; /* Add smaller padding on mobile */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Reduce font size for better readability on small screens */
+    margin-top: -15px; /* Pull title closer to the top for mobile */
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 1.2rem; /* Adjust font size for better readability on small screens */
+    padding: 0 15px; /* Reduce padding for mobile */
+    text-indent: 0; /* Remove text indent */
+  }
+
+  .priceListLink {
+    margin-top: 1.5rem;
+  }
+
+  .priceListLink a {
+    font-size: 1.1rem; /* Slightly reduce link font size on mobile */
+  }
+}
+
+/* Tablet-specific styles (Planchet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .aboutPage {
+    padding: 50px 30px; /* Increase padding for tablets */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust font size for tablets */
+    margin-top: -10px; /* Slightly pull title up for tablets */
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.3rem; /* Adjust paragraph font size for tablets */
+    padding: 0 25px;
+    text-indent: 15px; /* Add back text indent for better readability */
+  }
+
+  .priceListLink {
+    margin-top: 1.8rem;
+  }
+
+  .priceListLink a {
+    font-size: 1.2rem; /* Adjust link font size for tablets */
+  }
+}
+
+/* Very small screens (optional) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem; /* Further reduce font size for very small screens */
+    margin-top: -10px; /* Pull title up on very small screens */
+  }
+
+  p {
+    font-size: 1.1rem; /* Further adjust paragraph text for smaller screens */
+  }
+
+  .priceListLink a {
+    font-size: 1rem; /* Further reduce link font size for very small screens */
   }
 }

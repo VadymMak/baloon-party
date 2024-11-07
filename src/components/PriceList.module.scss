@@ -1,10 +1,9 @@
 .priceList {
-  background-image: url("/assets/price-list-background.jpg");
+  background-image: url("/assets/about-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,29 +140,37 @@ ul li {
 
 @media (max-width: 1024px) {
   .pageTitle {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
 
-  .closeButton {
-    font-size: 2.5rem;
+  ul {
+    margin-top: -40px;
   }
 
   ul li {
     font-size: 1.3rem;
   }
 
-  .instagramIcon img,
-  .qrCode img {
+  .instagramIcon img {
     width: 35px;
     height: 35px;
   }
 
+  .specialOffer {
+    margin-top: 50px;
+  }
+
+  .qrCode img {
+    width: 200px;
+    height: 200px;
+  }
+
   .topBar {
-    padding: 0 30px;
+    padding: 0 100px;
   }
 
   .logo {
-    width: 35px;
+    width: 135px;
   }
 
   .balonPartyText {
@@ -177,11 +184,15 @@ ul li {
   }
 
   .pageTitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .closeButton {
     font-size: 2rem;
+  }
+
+  ul {
+    margin-top: 140px;
   }
 
   ul li {
@@ -189,18 +200,23 @@ ul li {
     margin: 8px 0;
   }
 
-  .instagramIcon img,
-  .qrCode img {
+  .instagramIcon img {
     width: 30px;
     height: 30px;
   }
 
+  .qrCode img {
+    width: 200px;
+    height: 200px;
+  }
+
   .topBar {
     padding: 0 30px;
+    padding-top: 30px;
   }
 
   .logo {
-    width: 30px;
+    width: 60px;
   }
 
   .balonPartyText {
