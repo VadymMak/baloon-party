@@ -2,7 +2,7 @@
   background: url("../assets/about-background.jpg") no-repeat center center
     fixed;
   background-size: cover;
-  width: 100%; /* Use 100% to avoid horizontal overflow caused by scrollbar */
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
