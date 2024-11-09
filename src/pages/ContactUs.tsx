@@ -6,7 +6,7 @@ import instagramImg from "../assets/icons/converted-instagram.png";
 
 // Check if the user is on a mobile device
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const phoneNumber = "+421950266320";
+const phoneNumber = "+421(95)026-63-20";
 const instagramProfileUrl = "https://www.instagram.com/yourprofile"; // Replace with actual Instagram profile URL
 
 const ContactPage: React.FC = () => {
@@ -44,11 +44,15 @@ const ContactPage: React.FC = () => {
               href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.instagramIcon}
+              className={styles.instagramLink}
             >
-              <img src={instagramImg} alt="Instagram" />
+              <img
+                src={instagramImg}
+                alt="Instagram"
+                className={styles.instagramIcon}
+              />
+              <span className={styles.balonPartyText}>Balón Party00</span>
             </a>
-            <span className={styles.balonPartyText}>Balón Party00</span>
           </div>
         </div>
       </div>
