@@ -2,8 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styles from "./ContactUs.module.scss";
 import phoneQrCode from "../assets/phone_qrcode.svg";
-import phoneImg from "../assets/icons/converted-phone.png";
-import instagramImg from "../assets/icons/converted-instagram.png";
+import phoneImg from "../assets/icons/converted-phone.svg";
+import instagramImg from "../assets/icons/converted-instagram.svg";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const phoneNumber = "+421(95)026-63-20";
