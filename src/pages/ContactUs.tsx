@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styles from "./ContactUs.module.scss";
 import phoneQrCode from "../assets/phone_qrcode.svg";
-import phoneImg from "../assets/icons/converted-phone.svg";
 import instagramImg from "../assets/icons/converted-instagram.svg";
 
 import PhoneIcon from "../assets/svg/PhoneIcon";
@@ -87,12 +86,6 @@ const ContactPage: React.FC = () => {
                 aria-label="Call us by phone"
               >
                 <PhoneIcon width={50} height={50} />
-                {/* <img
-                  src={phoneImg}
-                  alt="Phone icon"
-                  className={styles.phoneIcon}
-                  loading="lazy"
-                /> */}
               </a>
               <a
                 href={isMobile ? `tel:${phoneNumber}` : instagramProfileUrl}
