@@ -5,6 +5,8 @@ import phoneQrCode from "../assets/phone_qrcode.svg";
 import phoneImg from "../assets/icons/converted-phone.svg";
 import instagramImg from "../assets/icons/converted-instagram.svg";
 
+import PhoneIcon from "../assets/svg/PhoneIcon";
+
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const phoneNumber = "+421(95)026-63-20";
 const instagramProfileUrl = "https://www.instagram.com/yourprofile"; // Replace with actual Instagram profile URL
@@ -84,12 +86,13 @@ const ContactPage: React.FC = () => {
                 className={styles.phoneIconLink}
                 aria-label="Call us by phone"
               >
-                <img
+                <PhoneIcon width={50} height={50} />
+                {/* <img
                   src={phoneImg}
                   alt="Phone icon"
                   className={styles.phoneIcon}
                   loading="lazy"
-                />
+                /> */}
               </a>
               <a
                 href={isMobile ? `tel:${phoneNumber}` : instagramProfileUrl}
