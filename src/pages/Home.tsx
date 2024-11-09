@@ -1,14 +1,17 @@
-import React from "react";
-import Hero from "../components/Hero";
-import Gallery from "../components/Gallery";
-import About from "../components/About";
+import React, { Suspense } from "react";
+
+const Hero = React.lazy(() => import("../components/Hero"));
+const About = React.lazy(() => import("../components/About"));
+const Gallery = React.lazy(() => import("../components/Gallery"));
 
 const Home: React.FC = () => {
   return (
     <>
-      <Hero />
-      <About />
-      <Gallery />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero />
+        <About />
+        <Gallery />
+      </Suspense>
     </>
   );
 };
