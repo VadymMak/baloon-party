@@ -4,10 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage"; // Import ErrorPage
 import AboutPage from "./pages/AboutPage";
 import PriceList from "./components/PriceList";
+import ContactUs from "./pages/ContactUs";
 
 const AppRoutes: React.FC = () => (
   <Routes>
@@ -15,7 +15,7 @@ const AppRoutes: React.FC = () => (
       <Route index element={<Home />} />
       <Route path="services" element={<AboutPage />} />
       <Route path="gallery" element={<Gallery />} />
-      <Route path="contact" element={<Contact />} />
+      <Route path="contact" element={<ContactUs />} />
       <Route path="/price-list" element={<PriceList />} />
 
       {/* Catch-all route for unmatched paths */}

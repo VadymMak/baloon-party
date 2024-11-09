@@ -1,0 +1,150 @@
+.contactPage {
+  background: url("../assets/contact-background.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50vh;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+
+  .content {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #b11b1a;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Contact Section */
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .contactGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Icons - Ensure uniform size for phone and Instagram */
+  .phoneIcon,
+  .instagramIcon img {
+    width: 40px;
+    height: 40px; /* Match size of both icons */
+    margin-right: 10px;
+  }
+
+  .contactItem {
+    font-size: 1.2rem;
+    color: #1e88e5;
+    text-decoration: none;
+  }
+
+  .socialMedia {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    .balonPartyText {
+      font-size: 1.2rem;
+      color: #1e88e5;
+    }
+  }
+
+  .qrCodeContainer {
+    margin-top: 0; /* Set to 0 to remove gap */
+    padding-bottom: 10px; /* Optional: Ensure no extra padding */
+  }
+
+  .qrCode {
+    width: 650px; /* Larger size for desktop */
+    height: auto;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    /* Tablet */
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .contactGroup {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phoneIcon,
+    .instagramIcon img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .contactItem {
+      font-size: 1.1rem;
+    }
+
+    .qrCode {
+      width: 500px; /* Smaller QR code on tablets */
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .contactGroup {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phoneIcon,
+    .instagramIcon img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .contactItem {
+      font-size: 1rem;
+    }
+
+    .socialMedia {
+      flex-direction: column;
+      margin-top: 0.5rem; /* Reduced gap */
+      .balonPartyText {
+        font-size: 1rem;
+      }
+    }
+
+    /* Move the QR code closer to the social media */
+    .qrCodeContainer {
+      margin-top: 0.5rem; /* Reduced gap between social media and QR code */
+      padding-bottom: 0; /* Remove extra bottom padding */
+    }
+
+    .qrCode {
+      width: 300px; /* Even smaller QR code for mobile */
+    }
+  }
+}
