@@ -5,6 +5,7 @@ import phoneQrCode from "../assets/phone_qrcode.svg";
 import instagramImg from "../assets/icons/converted-instagram.svg";
 
 import PhoneIcon from "../assets/svg/PhoneIcon";
+import InstagramIcon from "../assets/svg/InstagramIcon";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const phoneNumber = "+421(95)026-63-20";
@@ -104,12 +105,7 @@ const ContactPage: React.FC = () => {
                 className={styles.instagramLink}
                 aria-label="Visit our Instagram profile"
               >
-                <img
-                  src={instagramImg}
-                  alt="Instagram icon"
-                  className={styles.instagramIcon}
-                  loading="lazy"
-                />
+                <InstagramIcon width={50} height={50} />
                 <span className={styles.balonPartyText}>Balón Party00</span>
               </a>
             </div>
