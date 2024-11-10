@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styles from "./ContactUs.module.scss";
 import phoneQrCode from "../assets/phone_qrcode.svg";
-import instagramImg from "../assets/icons/converted-instagram.svg";
 
 import PhoneIcon from "../assets/svg/PhoneIcon";
 import InstagramIcon from "../assets/svg/InstagramIcon";
