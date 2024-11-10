@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styles from "./ContactUs.module.scss";
-import phoneQrCode from "../assets/phone_qrcode.svg";
+// import phoneQrCode from "../assets/phone_qrcode.svg";
 
 import PhoneIcon from "../assets/svg/PhoneIcon";
 import InstagramIcon from "../assets/svg/InstagramIcon";
@@ -112,14 +112,14 @@ const ContactPage: React.FC = () => {
         </div>
 
         {/* QR Code at the bottom */}
-        <footer className={styles.qrCodeContainer}>
+        {/* <footer className={styles.qrCodeContainer}>
           <img
             src={phoneQrCode}
             alt="QR code to call us"
             className={styles.qrCode}
             loading="lazy"
           />
-        </footer>
+        </footer> */}
       </div>
     </>
   );
