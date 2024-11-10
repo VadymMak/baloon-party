@@ -9,7 +9,12 @@ li {
 }
 
 .footer {
-  background-color: #f8f9fa; // Light background color
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.4) 100%
+  ); // Light background color
   padding: 2rem; // Padding of 2rem for top/bottom and left/right
   display: flex;
   flex-direction: column;
