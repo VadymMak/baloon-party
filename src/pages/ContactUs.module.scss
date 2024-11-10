@@ -1,4 +1,5 @@
 .contactPage {
+  position: relative; /* Needed for overlay positioning */
   background: url("../assets/contact-background-upd.jpg") no-repeat center
     center;
   background-size: cover;
@@ -10,6 +11,28 @@
   padding: 20px;
   color: #fff;
   text-align: center;
+
+  /* Overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Adjust this color and opacity */
+    z-index: 1; /* Ensures overlay stays behind content */
+    pointer-events: none;
+  }
+
+  /* Content within contactPage */
+  .content,
+  .contactSection,
+  .socialMedia,
+  .qrCodeContainer {
+    position: relative; /* Ensures these stay above the overlay */
+    z-index: 2;
+  }
 
   .content {
     padding: 20px;
@@ -37,6 +60,7 @@
   .contactGroup {
     display: flex;
     align-items: center;
+    gap: 1rem;
     margin-bottom: 1rem;
   }
 
@@ -44,7 +68,7 @@
   .phoneIcon,
   .instagramIcon img {
     width: 40px;
-    height: 40px; /* Match size of both icons */
+    height: 40px;
     margin-right: 10px;
   }
 
@@ -55,10 +79,10 @@
   }
 
   .socialMedia {
-    width: 100%; /* Full width for the container */
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px 0;
     margin-top: 1rem;
 
@@ -67,7 +91,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: #1e88e5; /* Change text color */
+      color: #1e88e5;
       font-size: 1.2rem;
     }
 
@@ -79,6 +103,7 @@
 
     .balonPartyText {
       font-size: 1.2rem;
+      padding: 0 1.9rem;
     }
   }
 
@@ -94,7 +119,6 @@
 
   /* Media Queries for Responsiveness */
   @media (max-width: 1024px) {
-    /* Tablet */
     h1 {
       font-size: 2.2rem;
     }
@@ -149,7 +173,7 @@
 
     .socialMedia {
       flex-direction: column;
-      width: 100%; /* Full width for mobile */
+      width: 100%;
       margin-top: 0.5rem;
       .balonPartyText {
         font-size: 1rem;
