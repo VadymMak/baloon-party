@@ -13,7 +13,22 @@
   .gallery-grid {
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    // Desktop - 4 rows and 3 columns
+    grid-template-columns: repeat(4, 1fr); // 3 columns for desktop
+    grid-template-rows: repeat(3, 1fr); // 4 rows for desktop
+
+    // Tablet - 3 rows and 4 columns
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); // 4 columns for tablets
+      grid-template-rows: repeat(4, 1fr); // 3 rows for tablets
+    }
+
+    // Mobile - 1 image per row
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // 1 column for mobile
+      grid-template-rows: repeat(12, 1fr); // 12 rows for mobile
+    }
   }
 
   .gallery-item {
@@ -30,7 +45,7 @@
       width: 100%;
       height: auto;
       transition: opacity 0.3s ease;
-      cursor: pointer; // Cursor pointer to indicate it's clickable
+      cursor: pointer;
     }
 
     .image-overlay {
@@ -54,7 +69,7 @@
     }
   }
 
-  // Lightbox styles
+  // Lightbox styles (if you want to keep the lightbox)
   .lightbox {
     position: fixed;
     top: 0;
@@ -65,13 +80,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; // Make sure the lightbox appears on top
+    z-index: 1000;
     cursor: pointer;
   }
 
   .lightbox-image {
     max-width: 90%;
     max-height: 90%;
-    object-fit: contain; // Ensure the image fits within the screen
+    object-fit: contain;
   }
 }

@@ -5,7 +5,10 @@ interface IconProps {
   height?: number;
 }
 
-const QrBaloonParty: React.FC<IconProps> = ({ width, height }, props) => (
+const QrBaloonParty: React.FC<IconProps> = (
+  { width = 40, height = 40 },
+  props
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}

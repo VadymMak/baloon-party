@@ -1,15 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styles from "./ContactUs.module.scss";
-// import phoneQrCode from "../assets/phone_qrcode.svg";
 
 import PhoneIcon from "../assets/svg/PhoneIcon";
 import InstagramIcon from "../assets/svg/InstagramIcon";
+import qrCodeIcon from "../assets/icons/frame-removebg-preview.png";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const phoneNumber = "+421(95)026-63-20";
-const instagramProfileUrl = "https://www.instagram.com/yourprofile"; // Replace with actual Instagram profile URL
-const siteUrl = "https://yourdomain.com"; // Replace with your actual domain
+const instagramProfileUrl = "https://www.instagram.com/yourprofile";
+const siteUrl = "https://yourdomain.com";
 
 const ContactPage: React.FC = () => {
   return (
@@ -109,17 +109,11 @@ const ContactPage: React.FC = () => {
               </a>
             </div>
           </section>
-        </div>
 
-        {/* QR Code at the bottom */}
-        {/* <footer className={styles.qrCodeContainer}>
-          <img
-            src={phoneQrCode}
-            alt="QR code to call us"
-            className={styles.qrCode}
-            loading="lazy"
-          />
-        </footer> */}
+          <div className={styles.qrCode}>
+            <img src={qrCodeIcon} alt="QR Code" />
+          </div>
+        </div>
       </div>
     </>
   );
