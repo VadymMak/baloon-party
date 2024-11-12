@@ -1,23 +1,29 @@
 // Gallery.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Loader from "../components/Loader"; // Import the Loader component
 import styles from "./Gallery.module.scss";
 
-const placeholderImages = Array.from({ length: 15 }, (_, i) => ({
+const placeholderImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
-  url: `/images/gallery/just-sample.jpg`, // Path to your image
+  url: `/images/gallery/just-sample.jpg`,
   title: `Balloon Setup ${i + 1}`,
 }));
 
 const Gallery: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [images, setImages] = useState(placeholderImages);
 
-  const openImage = (url: string) => {
-    setSelectedImage(url); // Open the full-screen viewer
-  };
+  // Simulate a data fetch
+  useEffect(() => {
+    setTimeout(() => {
+      setImages(placeholderImages); // Simulate loaded images
+      setLoading(false); // Set loading to false after data is fetched
+    }, 2000); // Simulate a 2-second loading time
+  }, []);
 
-  const closeImage = () => {
-    setSelectedImage(null); // Close the full-screen viewer
-  };
+  if (loading) {
+    return <Loader />; // Display the loader if data is still loading
+  }
 
   return (
     <div className={styles["gallery-container"]}>
@@ -25,7 +31,7 @@ const Gallery: React.FC = () => {
         Our Balloon Decorations Gallery
       </h2>
       <div className={styles["gallery-grid"]}>
-        {placeholderImages.map((image) => (
+        {images.map((image) => (
           <div className={styles["gallery-item"]} key={image.id}>
             <img
               src={image.url}
@@ -33,7 +39,6 @@ const Gallery: React.FC = () => {
               title={image.title}
               className={styles["gallery-image"]}
               loading="lazy"
-              onClick={() => openImage(image.url)} // Click to open full-screen
             />
             <div className={styles["image-overlay"]}>
               <span className={styles["image-title"]}>{image.title}</span>
@@ -41,17 +46,6 @@ const Gallery: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* Full-screen Lightbox */}
-      {selectedImage && (
-        <div className={styles["lightbox"]} onClick={closeImage}>
-          <img
-            src={selectedImage}
-            alt="Full screen view"
-            className={styles["lightbox-image"]}
-          />
-        </div>
-      )}
     </div>
   );
 };
