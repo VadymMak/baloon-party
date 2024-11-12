@@ -1,0 +1,77 @@
+// Gallery.module.scss
+
+.gallery-container {
+  padding: 20px;
+
+  .gallery-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .gallery-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: auto;
+      transition: opacity 0.3s ease;
+      cursor: pointer; // Cursor pointer to indicate it's clickable
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      .image-title {
+        font-size: 1rem;
+      }
+    }
+
+    &:hover .image-overlay {
+      opacity: 1;
+    }
+  }
+
+  // Lightbox styles
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; // Make sure the lightbox appears on top
+    cursor: pointer;
+  }
+
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; // Ensure the image fits within the screen
+  }
+}

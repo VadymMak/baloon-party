@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Gallery from "./components/Gallery";
+import Gallery from "./pages/Gallery";
 import ErrorPage from "./components/ErrorPage"; // Import ErrorPage
 import AboutPage from "./pages/AboutPage";
 import PriceList from "./components/PriceList";
