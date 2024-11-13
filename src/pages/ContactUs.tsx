@@ -69,8 +69,9 @@ const ContactPage: React.FC = () => {
         <div className={styles.content}>
           <h1>Contact Us</h1>
           <p>
-            Nezdráhajte sa nás kontaktovať pre akékoľvek otázky alebo ďalšie
-            informácie.
+            Naše profesionálne služby balónových dekorácií poskytujeme v
+            Trenčíne a celom trenčianskom regióne. Nezdráhajte sa nás
+            kontaktovať pre akékoľvek otázky alebo ďalšie informácie.
           </p>
 
           {/* Contact Section */}
