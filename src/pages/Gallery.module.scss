@@ -24,6 +24,11 @@
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(12, 1fr);
+      .gallery-image {
+        filter: grayscale(
+          0%
+        ) !important; /* Ensure images are in color on mobile */
+      }
     }
   }
 
