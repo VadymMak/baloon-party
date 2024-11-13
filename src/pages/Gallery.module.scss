@@ -40,6 +40,7 @@
     .gallery-image {
       width: 100%;
       height: auto;
+      border-radius: 10px;
       transition: opacity 0.3s ease, filter 0.3s ease; /* Add transition for filter */
       cursor: pointer;
       filter: grayscale(100%); /* Make the image black-and-white by default */
@@ -87,6 +88,7 @@
   .lightbox-image {
     max-width: 90%;
     max-height: 90%;
+    border-radius: 15px;
     object-fit: contain;
   }
 }
