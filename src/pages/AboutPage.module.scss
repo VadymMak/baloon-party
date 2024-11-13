@@ -33,18 +33,20 @@ p {
 }
 
 .priceListLink {
-  margin-top: 2rem;
-  text-align: center;
-
+  font-size: 1.5rem;
   a {
-    color: #2584be;
+    display: flex;
+    align-items: center;
+    color: #2684be;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-family: cursive;
+    color: #b11b1a;
+    i {
+      margin-right: 8px; /* Space between the icon and text */
+    }
 
     &:hover {
-      color: #1a5a85;
+      color: #1e63a1; /* Hover effect */
     }
   }
 }

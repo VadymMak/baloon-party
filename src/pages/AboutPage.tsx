@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./AboutPage.module.scss";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+
 const AboutPage: React.FC = () => {
   return (
     <div className={styles.aboutPage}>
@@ -41,7 +44,9 @@ const AboutPage: React.FC = () => {
 
       {/* Link to the Price List page */}
       <div className={styles.priceListLink}>
-        <Link to="/price-list">View Our Price List</Link>
+        <Link to="/price-list">
+          <FontAwesomeIcon icon={faTag} /> View Our Price List
+        </Link>
       </div>
     </div>
   );
