@@ -23,7 +23,7 @@ const Gallery: React.FC = () => {
 
   return (
     <section className={styles.gallery}>
-      <h2>Naša Galéria</h2>
+      <h2>Naše Produkty</h2>
       <div className={styles.buttonContainer}>
         <div className={styles.row}>
           <button
