@@ -2,23 +2,22 @@ import React, { useState, useEffect } from "react";
 import Loader from "../components/Loader"; // Import the Loader component
 import styles from "./Gallery.module.scss";
 
-const placeholderImages = Array.from({ length: 12 }, (_, i) => ({
+const galleryImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
-  url: `/images/gallery/just-sample.jpg`, // Path to your image
-  title: `Balloon Setup ${i + 1}`,
+  url: `/images/gallery/gallery_${i + 1}.jpg`, // Path to your images
+  title: `Balloon Party`,
 }));
 
 const Gallery: React.FC = () => {
   const [loading, setLoading] = useState(true);
-  const [images, setImages] = useState(placeholderImages);
+  const [images] = useState(galleryImages); // Removed `setImages` since it's not needed
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState<string | null>(null);
 
-  // Simulate a data fetch
+  // Simulate loading with a timeout
   useEffect(() => {
     setTimeout(() => {
-      setImages(placeholderImages); // Simulate loaded images
-      setLoading(false); // Set loading to false after data is fetched
+      setLoading(false); // Set loading to false after data is "fetched"
     }, 2000); // Simulate a 2-second loading time
   }, []);
 
@@ -33,7 +32,7 @@ const Gallery: React.FC = () => {
   };
 
   if (loading) {
-    return <Loader />; // Display the loader if data is still loading
+    return <Loader />; // Display the loader while loading is true
   }
 
   return (
