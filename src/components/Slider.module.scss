@@ -86,6 +86,9 @@
 }
 
 @media (max-width: 768px) {
+  .slider {
+    margin: 20px auto 40px auto;
+  }
   .sliderContainer {
     flex-direction: column;
   }

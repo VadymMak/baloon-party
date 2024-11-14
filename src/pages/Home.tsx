@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import Slider from "../components/Slider";
+import Article from "../components/Article";
 
 const Hero = React.lazy(() => import("../components/Hero"));
 const About = React.lazy(() => import("../components/About"));
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
         <Hero />
         <About />
         <Slider />
+        <Article />
       </Suspense>
     </>
   );
