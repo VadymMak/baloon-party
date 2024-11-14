@@ -26,7 +26,7 @@ const Article: React.FC = () => {
       title: "Halloweenska párty oslava",
       description:
         "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch. Sme hrdí, že môžeme prinášať čarovnú atmosféru do Trenčína a celého Trenčianskeho kraja.",
-      imageSrc: "/images/article_1.jpg",
+      imageSrc: "/images/article_2.jpg",
       imageAlt: "Halloween Party",
       imageLeft: true,
     },
