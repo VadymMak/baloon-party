@@ -20,11 +20,22 @@ const AboutPage: React.FC = () => {
       <div className={styles.aboutPage}>
         <h1>Vitajte na stránke Baloon Party!</h1>
         <p>
-          Sme tím profesionálov, ktorí sa špecializujú na tvorbu dekorácií a
-          fotostien pre vaše najvýznamnejšie chvíle v Trenčíne a celom
-          Trenčianskom kraji. Naším poslaním je priniesť do vašich osláv
-          jedinečnú atmosféru a farebnosť, ktoré vytvoria krásne spomienky plné
-          radosti a šťastia.
+          Vitajte na stránke Baloon Party00! Sme profesionáli v tvorbe dekorácií
+          a fotostien pre vaše výnimočné chvíle v Trenčíne a celom Trenčianskom
+          kraji. Naším cieľom je priniesť do vášho sviatočného dňa jedinečnú
+          atmosféru a farebnú krásu, ktorá zanechá spomienky plné radosti a
+          šťastia.
+        </p>
+        <p>
+          Milujeme prinášať svetlé emócie a robiť oslavy nezabudnuteľnými. Či už
+          plánujete svadbu, narodeninovú oslavu, firemný večierok alebo inú
+          špeciálnu udalosť, postaráme sa o to, aby bola výnimočná.
+        </p>
+        <p>
+          Ponúkame tiež možnosť vytvoriť individuálny dizajn presne podľa vašich
+          predstáv. Spolu s vami premeníme vaše nápady na skutočnosť a
+          zabezpečíme, aby výzdoba dokonale ladila s vaším štýlom a charakterom
+          udalosti.
         </p>
         {/* More content here */}
         <div className={styles.priceListLink}>
