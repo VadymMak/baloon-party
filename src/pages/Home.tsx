@@ -3,7 +3,6 @@ import Slider from "../components/Slider";
 
 const Hero = React.lazy(() => import("../components/Hero"));
 const About = React.lazy(() => import("../components/About"));
-const Gallery = React.lazy(() => import("../components/Gallery"));
 
 const Home: React.FC = () => {
   return (
@@ -12,7 +11,6 @@ const Home: React.FC = () => {
         <Hero />
         <About />
         <Slider />
-        {/* <Gallery /> */}
       </Suspense>
     </>
   );
