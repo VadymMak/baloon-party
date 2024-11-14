@@ -18,12 +18,14 @@
   height: 400px; /* Set a fixed height for the image container */
   overflow: hidden; /* This ensures that the image overflowing the width will be hidden */
   margin-bottom: 40px;
+  padding: 0 20px;
 }
 
 .topImage {
   width: 100%;
   height: 100%; /* The image height fills the container */
   object-fit: cover; /* Ensures the image covers the full height without distorting */
+  border-radius: 10px;
 }
 
 h1 {
