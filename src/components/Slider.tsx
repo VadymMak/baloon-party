@@ -12,26 +12,39 @@ const images = [
 
 const Slider: React.FC = () => {
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState<string>("");
 
   // Move to the next slide
   const nextSlide = () => {
-    setActiveImageIndex(
-      (prevIndex) => (prevIndex === images.length - 3 ? 0 : prevIndex + 3) // Slide in groups of 3
-    );
+    // Change to the next set of images, wrapping around when necessary
+    setActiveImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   // Move to the previous slide
   const prevSlide = () => {
+    // Change to the previous set of images, wrapping around when necessary
     setActiveImageIndex(
-      (prevIndex) => (prevIndex === 0 ? images.length - 3 : prevIndex - 3) // Slide in groups of 3
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
 
-  // Automatically change slides every 3 seconds
+  // Automatically change slides every 1 second
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000); // 3000ms = 3 seconds
+    const interval = setInterval(nextSlide, 5000); // 1000ms = 1 second
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
+
+  // Handle click on image for full-screen modal
+  const handleImageClick = (src: string) => {
+    setModalImageSrc(src);
+    setIsModalOpen(true);
+  };
+
+  // Close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <section className={styles.slider}>
@@ -41,12 +54,18 @@ const Slider: React.FC = () => {
           &#8249;
         </button>
         <div className={styles.imageContainer}>
-          {/* Render three images per slide */}
+          {/* Render 3 images at a time */}
           <div className={styles.slideRow}>
+            {/* Looping through images with modulo logic to ensure 3 are always shown */}
             {images
-              .slice(activeImageIndex, activeImageIndex + 3)
+              .map((_, i) => images[(activeImageIndex + i) % images.length]) // Ensure wrap around
+              .slice(0, 3) // Always slice 3 images
               .map((image) => (
-                <div key={image.id} className={styles.imageWrapper}>
+                <div
+                  key={image.id}
+                  className={styles.imageWrapper}
+                  onClick={() => handleImageClick(image.src)}
+                >
                   <img
                     src={image.src}
                     alt={image.label}
@@ -61,6 +80,17 @@ const Slider: React.FC = () => {
           &#8250;
         </button>
       </div>
+
+      {/* Full-screen Modal */}
+      {isModalOpen && (
+        <div className={styles.modal} onClick={closeModal}>
+          <img
+            src={modalImageSrc}
+            alt="Full Screen"
+            className={styles.modalImage}
+          />
+        </div>
+      )}
     </section>
   );
 };
