@@ -1,46 +1,63 @@
 .about {
-  padding: 2rem; // Padding for the about section
-  margin-top: -40px; // Negative margin to pull the section up
+  display: flex; /* Use flexbox for layout */
+  align-items: center;
+  justify-content: space-between; /* Distribute space between text and image */
+  padding: 2rem;
+  margin-top: -40px;
   background-color: rgba(
     255,
     255,
     255,
     0.8
-  ); // Light background for the section
-  color: #333; // Text color
-  text-align: left; // Align text to the left
+  ); /* Light background for the section */
+  color: #333;
+  text-align: left;
+
+  .textContainer {
+    flex: 1; /* Let text take up remaining space */
+    margin-right: 20px; /* Space between text and image */
+  }
 
   h2 {
-    font-size: 2.2rem; // Default size for the heading
-    margin-bottom: 1rem; // Space below the heading
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-indent: 20px;
+    font-family: cursive;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     text-indent: 20px;
     font-family: cursive;
   }
 
-  p {
-    font-size: 1.4rem; // Default size for the paragraph
-    margin-bottom: 1rem; // Space between paragraphs
-    text-indent: 20px; // Indentation for paragraph
-    font-family: cursive;
+  .imageContainer {
+    flex: 1; /* Let image take up space on the right */
+    max-width: 45%; /* Limit the width of the image container */
   }
 
-  // Media query for tablet view (planchet)
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
   @media (max-width: 768px) {
-    h2 {
-      font-size: 1.8rem; // Reduce heading size for tablet
-    }
-    p {
-      font-size: 1.2rem; // Reduce paragraph size for tablet
+    flex-direction: column; /* Stack text and image on top of each other for smaller screens */
+    .imageContainer {
+      max-width: 100%;
+      margin-top: 20px; /* Space between text and image */
     }
   }
 
-  // Media query for mobile view
   @media (max-width: 480px) {
     h2 {
-      font-size: 1.5rem; // Smaller heading size for mobile
+      font-size: 1.5rem;
     }
     p {
-      font-size: 1rem; // Smaller paragraph size for mobile
+      font-size: 1rem;
     }
   }
 }
