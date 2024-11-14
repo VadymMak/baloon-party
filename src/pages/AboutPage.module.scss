@@ -13,6 +13,19 @@
   padding: 0 20px; /* Add padding to prevent content from touching the edges on mobile */
 }
 
+.topImageContainer {
+  width: 100%;
+  height: 400px; /* Set a fixed height for the image container */
+  overflow: hidden; /* This ensures that the image overflowing the width will be hidden */
+  margin-bottom: 40px;
+}
+
+.topImage {
+  width: 100%;
+  height: 100%; /* The image height fills the container */
+  object-fit: cover; /* Ensures the image covers the full height without distorting */
+}
+
 h1 {
   font-size: 2.4rem;
   margin-top: -20px; /* Pull title closer to top */
@@ -75,6 +88,12 @@ p {
 
   .priceListLink a {
     font-size: 1.1rem; /* Slightly reduce link font size on mobile */
+  }
+
+  .topImageContainer {
+    padding: 0 10px;
+    border-radius: 3px;
+    margin-bottom: 0;
   }
 }
 
