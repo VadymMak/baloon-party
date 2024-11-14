@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import styles from "./Article.module.scss"; // Import SCSS module
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Article.module.scss";
 
 interface IArticle {
   title: string;
   description: string;
   imageSrc: string;
   imageAlt: string;
-  imageLeft: boolean; // Boolean to toggle image side
+  imageLeft: boolean;
 }
 
 const Article: React.FC = () => {
@@ -17,7 +20,7 @@ const Article: React.FC = () => {
         "Naša vianočná oslava v Trenčíne sa niesla v duchu teplého a rodinného prostredia. Vianočné balónové dekorácie dokonale zapadli do sviatočnej atmosféry a pomohli vytvoriť nezabudnuteľnú vianočnú oslavu. V Trenčíne a jeho okolí sa tešíme, že môžeme vytvárať krásne spomienky na výnimočné chvíle.",
       imageSrc: "/images/article_1.jpg",
       imageAlt: "Christmas Celebration",
-      imageLeft: false, // Picture on the right side
+      imageLeft: false,
     },
     {
       title: "Halloweenska párty oslava",
@@ -25,7 +28,7 @@ const Article: React.FC = () => {
         "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch. Sme hrdí, že môžeme prinášať čarovnú atmosféru do Trenčína a celého Trenčianskeho kraja.",
       imageSrc: "/images/article_1.jpg",
       imageAlt: "Halloween Party",
-      imageLeft: true, // Picture on the left side
+      imageLeft: true,
     },
   ]);
 
@@ -44,6 +47,11 @@ const Article: React.FC = () => {
           <div className={styles.textContainer}>
             <h2>{article.title}</h2>
             <p>{article.description}</p>
+            <div className={styles.priceListLink}>
+              <Link to="/price-list">
+                <FontAwesomeIcon icon={faTag} /> Zobraziť náš cenník
+              </Link>
+            </div>
           </div>
           <div className={styles.imageContainer}>
             <img

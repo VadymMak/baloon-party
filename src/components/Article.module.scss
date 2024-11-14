@@ -58,6 +58,11 @@ p {
   flex-direction: row; /* Image on the right */
 }
 
+.priceListLink a {
+  color: #b11b1a;
+  font-size: 1.3rem;
+}
+
 /* Media query for tablet view */
 @media (max-width: 768px) {
   .article {
