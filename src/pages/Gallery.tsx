@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Loader from "../components/Loader"; // Import the Loader component
 import styles from "./Gallery.module.scss";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 const galleryImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
@@ -68,6 +71,26 @@ const Gallery: React.FC = () => {
           />
         </div>
       )}
+      <div className={styles["company-info"]}>
+        <h3>About Our Company</h3>
+        <p>
+          Sme odhodlaní prinášať radosť a eleganciu do každej oslavy. Našimi
+          kreatívnymi balónovými dekoráciami chceme vaše udalosti urobiť
+          nezabudnuteľnými.
+        </p>
+        <p>
+          Naším cieľom je rozšíriť naše služby a držať krok s najnovšími
+          trendmi, aby sme vám mohli ponúknuť jedinečné a nezabudnuteľné
+          zážitky. Pridajte sa k nám, keď oživujeme vaše predstavy, jednu oslavu
+          za druhou!
+        </p>
+        <p>Pre viac informácií sledujte naše sociálne siete.</p>
+      </div>
+      <div className={styles.priceListLink}>
+        <Link to="/price-list">
+          <FontAwesomeIcon icon={faTag} /> View Our Price List
+        </Link>
+      </div>
     </div>
   );
 };
