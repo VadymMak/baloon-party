@@ -44,6 +44,27 @@
     border-radius: 8px;
   }
 
+  .priceListLink {
+    margin-top: 1rem;
+    text-align: center;
+
+    a {
+      font-size: 1.2rem;
+      color: #b11b1a;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover {
+        color: #8b0000;
+      }
+
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     flex-direction: column; /* Stack text and image on top of each other for smaller screens */
     .imageContainer {

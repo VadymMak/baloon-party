@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./About.module.scss"; // Import SCSS module
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 const About: React.FC = () => (
   <section className={styles.about}>
@@ -24,6 +27,11 @@ const About: React.FC = () => (
         udalosti.
       </p>
       <p>Ďakujeme, že nám dôverujete s vašimi najkrajšími momentmi!</p>
+      <div className={styles.priceListLink}>
+        <Link to="/price-list">
+          <FontAwesomeIcon icon={faTag} /> Zobraziť náš cenník
+        </Link>
+      </div>
     </div>
     <div className={styles.imageContainer}>
       <img
