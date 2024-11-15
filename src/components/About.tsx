@@ -26,6 +26,11 @@ const About: React.FC = () => (
         zabezpečíme, aby výzdoba dokonale ladila s vaším štýlom a charakterom
         udalosti.
       </p>
+      <p>
+        Okrem toho ponúkame helium naplnené balóniky za cenu 5 EUR za kus, ktoré
+        je možné prispôsobiť o jednu číslicu podľa vašich predstáv! Ideálne pre
+        všetky druhy osláv a špeciálnych príležitostí.
+      </p>
       <p>Ďakujeme, že nám dôverujete s vašimi najkrajšími momentmi!</p>
       <div className={styles.priceListLink}>
         <Link to="/price-list">

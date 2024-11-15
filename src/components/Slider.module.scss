@@ -40,6 +40,7 @@
   flex: 1;
   margin: 0 10px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Add transition to the wrapper */
 }
 
 .slideImage {
@@ -47,6 +48,11 @@
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for scale */
+}
+
+.imageWrapper:hover .slideImage {
+  transform: scale(1.1); /* Slightly increase the size of the image */
 }
 
 .caption {

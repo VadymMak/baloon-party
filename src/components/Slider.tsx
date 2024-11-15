@@ -14,26 +14,28 @@ const Slider: React.FC = () => {
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageSrc, setModalImageSrc] = useState<string>("");
+  const [isHovered, setIsHovered] = useState<boolean>(false); // Track hover state
 
   // Move to the next slide
   const nextSlide = () => {
-    // Change to the next set of images, wrapping around when necessary
     setActiveImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   // Move to the previous slide
   const prevSlide = () => {
-    // Change to the previous set of images, wrapping around when necessary
     setActiveImageIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
 
-  // Automatically change slides every 1 second
+  // Automatically change slides every 5 seconds
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); // 1000ms = 1 second
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, []);
+    if (!isHovered) {
+      // Only start the interval if not hovered
+      const interval = setInterval(nextSlide, 5000);
+      return () => clearInterval(interval); // Cleanup on component unmount
+    }
+  }, [isHovered]); // Dependency array includes `isHovered`
 
   // Handle click on image for full-screen modal
   const handleImageClick = (src: string) => {
@@ -47,7 +49,11 @@ const Slider: React.FC = () => {
   };
 
   return (
-    <section className={styles.slider}>
+    <section
+      className={styles.slider}
+      onMouseEnter={() => setIsHovered(true)} // Stop interval on hover
+      onMouseLeave={() => setIsHovered(false)} // Restart interval on hover leave
+    >
       <h2>Naše Produkty</h2>
       <div className={styles.sliderContainer}>
         <button className={styles.arrowButton} onClick={prevSlide}>
@@ -56,10 +62,9 @@ const Slider: React.FC = () => {
         <div className={styles.imageContainer}>
           {/* Render 3 images at a time */}
           <div className={styles.slideRow}>
-            {/* Looping through images with modulo logic to ensure 3 are always shown */}
             {images
-              .map((_, i) => images[(activeImageIndex + i) % images.length]) // Ensure wrap around
-              .slice(0, 3) // Always slice 3 images
+              .map((_, i) => images[(activeImageIndex + i) % images.length])
+              .slice(0, 3)
               .map((image) => (
                 <div
                   key={image.id}
