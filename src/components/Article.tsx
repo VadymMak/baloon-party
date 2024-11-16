@@ -24,7 +24,8 @@ const Article: React.FC = () => {
     },
     {
       title: "Día de los Muertos oslava",
-      description: `🎃 Baloon Party pre Epiline: Halloween v štýle Día de los Muertos!🎃 S radosťou sme sa podieľali na výzdobe salónu Epiline pri príležitosti Halloweenu. 🕸️✨ Pripravili 💀 Ručnú maľbu na sklo inšpirovanú tradičným mexickým sviatkom Día de los Muertos – plnú žiarivých farieb a jedinečných motívov 🎃 Dekoráciu z tekvice ozdobenú prírodnými kvetmi a doplnenú jemným osvetlením, ktoré vytvára dokonalú atmosféru. Ďakujeme salónu Epiline za dôveru a príležitosť priniesť trochu kreativity do tohto čarovného obdobia. ✨🖌️ Ak plánujete podobnú výzdobu pre svoju firmu alebo domov, neváhajte nás kontaktovať! 🌟 
+      description: `🎃 Baloon Party pre Epiline: Halloween v štýle "Día de los Muertos"! 🎃 S radosťou sme sa podieľali na výzdobe salónu Epiline pri príležitosti Halloweenu. 🕸️✨ Pripravili sme:💀 Ručnú maľbu na sklo inšpirovanú tradičným mexickým sviatkom "Día de los Muertos" – plnú žiarivých farieb a jedinečných motívov.🎃 Dekoráciu z tekvice ozdobenú prírodnými kvetmi a doplnenú jemným osvetlením, ktoré vytvára dokonalú atmosféru. Ďakujeme salónu Epiline za dôveru a príležitosť priniesť trochu kreativity do tohto čarovného obdobia. ✨ Ak plánujete podobnú výzdobu pre svoju firmu alebo domov, neváhajte nás kontaktovať! 🌟
+ 
         <a href="https://maps.app.goo.gl/ReNMpKffxdto3GGf9" target="_blank" rel="noopener noreferrer">Nájdete nás na Google Mapách</a>`,
       imageSrc: "/images/article_2.jpg",
       imageAlt: "Día de los Muertos Celebration",
