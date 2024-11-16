@@ -1,22 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "../store/store";
+import { setLanguage } from "../store/languageSlice";
 import Logo from "../assets/logo-new.svg";
 import LanguageDropdown from "./LanguageDropdown";
 import styles from "./Header.module.scss";
 import useWindowSize from "../hooks/useWindowSize";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { useTranslation } from "react-i18next";
 
 interface HeaderProps {
   toggleNav: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
+  const dispatch = useDispatch<AppDispatch>();
   const { width } = useWindowSize();
   const isMobile = width !== undefined && width <= 800;
-  const { i18n } = useTranslation(); // Use the i18n object
+  const { i18n } = useTranslation();
+  const currentLanguage = useSelector(
+    (state: RootState) => state.language.language
+  );
 
   const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang); // Use i18n to change language
+    dispatch(setLanguage(lang));
+    i18n.changeLanguage(lang);
   };
 
   return (
@@ -39,13 +47,12 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
         </Link>
       </nav>
 
-      {/* Language dropdown component */}
+      {/* Language dropdown with currentLanguage from Redux */}
       <LanguageDropdown
-        changeLanguage={handleLanguageChange} // Pass the handler here
-        currentLanguage="sk" // Set the initial language
+        changeLanguage={handleLanguageChange}
+        currentLanguage={currentLanguage}
       />
 
-      {/* Hamburger menu for mobile */}
       {isMobile && (
         <div className={styles.hamburger} onClick={toggleNav}>
           ☰

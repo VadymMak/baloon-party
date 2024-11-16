@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./LanguageDropdown.module.scss";
 import { useDispatch } from "react-redux";
@@ -22,9 +22,6 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
 }) => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] =
-    useState<string>(currentLanguage);
-
   const dispatch = useDispatch<AppDispatch>();
 
   const languages: Language[] = [
@@ -32,51 +29,42 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     { code: "ua", name: "Українська", flag: "/icons/ua.svg" },
   ];
 
+  const savedLanguage = localStorage.getItem("baloon-party-language") || "sk";
+  const [selectedLanguage, setSelectedLanguage] = useState(savedLanguage);
+
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
-      i18n.changeLanguage(savedLanguage); // Change to the saved language
-      setSelectedLanguage(savedLanguage); // Update the selected language state
-    } else {
-      const defaultLanguage = "sk"; // Set default to Slovak if no saved language
-      localStorage.setItem("language", defaultLanguage);
-      i18n.changeLanguage(defaultLanguage);
-      setSelectedLanguage(defaultLanguage); // Set default language
-    }
-  }, [i18n]);
+    i18n.changeLanguage(savedLanguage);
+    setSelectedLanguage(savedLanguage);
+  }, [i18n, savedLanguage]);
 
   const handleLanguageChange = useCallback(
     (code: string) => {
-      changeLanguage(code); // Inform parent component of the change
-      i18n.changeLanguage(code); // Change the language in i18next
-      localStorage.setItem("language", code); // Update language in localStorage
-      setSelectedLanguage(code); // Update the selected language state
-      setIsOpen(false); // Close the dropdown
-      dispatch(setLanguage(code)); // Dispatch to Redux if needed
+      i18n.changeLanguage(code);
+      localStorage.setItem("baloon-party-language", code);
+      setSelectedLanguage(code);
+      setIsOpen(false);
+      dispatch(setLanguage(code));
     },
-    [changeLanguage, i18n, dispatch]
+    [i18n, dispatch]
   );
 
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const currentLanguageDetails = languages.find(
+    (lang) => lang.code === selectedLanguage
+  );
 
   return (
     <div className={styles.dropdown}>
       <button onClick={toggleDropdown} className={styles.dropdownToggle}>
-        {selectedLanguage.toUpperCase()}
-        {languages.find((lang) => lang.code === selectedLanguage) && (
+        {currentLanguageDetails && (
           <>
             <img
-              src={
-                languages.find((lang) => lang.code === selectedLanguage)!.flag
-              }
-              alt={
-                languages.find((lang) => lang.code === selectedLanguage)!.name
-              }
+              src={currentLanguageDetails.flag}
+              alt={currentLanguageDetails.name}
               style={{ width: "20px", marginRight: "8px" }}
             />
-            {selectedLanguage.toUpperCase()}
+            {currentLanguageDetails.code}
           </>
         )}
       </button>
@@ -93,7 +81,7 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
                   alt={lang.name}
                   style={{ width: "20px", marginRight: "8px" }}
                 />
-                {lang.name}
+                {lang.code}
               </button>
             </li>
           ))}

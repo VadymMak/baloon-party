@@ -1,50 +1,64 @@
-/* LanguageDropdown.module.scss */
 .dropdown {
   position: relative;
-  background-color: red; /* Parent background color for visibility */
+  top: -20px;
 
   .dropdownToggle {
-    background-color: #fff; /* Visible background color */
-    color: red; /* Color of the text */
-    width: 100px; /* Fixed size for the button */
-    height: 100px; /* Fixed size for the button */
-    border: 2px solid #ccc; /* Border for the button */
+    color: #b11b1a;
+    width: 100px;
+    height: 40px;
     cursor: pointer;
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    padding: 10px; /* Padding inside button */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Make text size readable */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.4rem;
     font-weight: bold;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
 
   .dropdownMenu {
     position: absolute;
-    background-color: #333;
+    background-color: transparent; /* Set background to transparent */
     border-radius: 5px;
     list-style: none;
     margin: 0;
     padding: 10px 0;
     z-index: 1000;
-    display: none; /* Initially hidden */
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+  }
 
-    &.open {
-      display: block; /* Show when 'open' class is added */
+  .languageButton {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 5px 15px;
+    color: #b11b1a;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
-    li {
-      color: #fff;
-      padding: 10px 15px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
+    img {
+      width: 30px;
+      margin-right: 8px;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .dropdown {
+    top: 0;
   }
 }
