@@ -1,19 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo-new.svg"; // Ensure the logo path is correct
+import Logo from "../assets/logo-new.svg";
+import LanguageDropdown from "./LanguageDropdown";
 import styles from "./Header.module.scss";
-import useWindowSize from "../hooks/useWindowSize"; // Import the useWindowSize hook
+import useWindowSize from "../hooks/useWindowSize";
+import { useTranslation } from "react-i18next"; // Import useTranslation hook
 
 interface HeaderProps {
-  toggleNav: () => void; // Add this prop to handle the toggle function
+  toggleNav: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
-  // Get the window size using the custom hook
   const { width } = useWindowSize();
-
-  // Ensure width is defined before rendering the hamburger
   const isMobile = width !== undefined && width <= 800;
+  const { i18n } = useTranslation(); // Use the i18n object
+
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang); // Use i18n to change language
+  };
 
   return (
     <header className={styles.header}>
@@ -34,6 +38,12 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
           Kontakty
         </Link>
       </nav>
+
+      {/* Language dropdown component */}
+      <LanguageDropdown
+        changeLanguage={handleLanguageChange} // Pass the handler here
+        currentLanguage="sk" // Set the initial language
+      />
 
       {/* Hamburger menu for mobile */}
       {isMobile && (

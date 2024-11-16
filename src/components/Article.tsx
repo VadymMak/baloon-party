@@ -23,12 +23,20 @@ const Article: React.FC = () => {
       imageLeft: false,
     },
     {
+      title: "Día de los Muertos oslava",
+      description: `🎃 Baloon Party pre Epiline: Halloween v štýle Día de los Muertos!🎃 S radosťou sme sa podieľali na výzdobe salónu Epiline pri príležitosti Halloweenu. 🕸️✨ Pripravili 💀 Ručnú maľbu na sklo inšpirovanú tradičným mexickým sviatkom Día de los Muertos – plnú žiarivých farieb a jedinečných motívov 🎃 Dekoráciu z tekvice ozdobenú prírodnými kvetmi a doplnenú jemným osvetlením, ktoré vytvára dokonalú atmosféru. Ďakujeme salónu Epiline za dôveru a príležitosť priniesť trochu kreativity do tohto čarovného obdobia. ✨🖌️ Ak plánujete podobnú výzdobu pre svoju firmu alebo domov, neváhajte nás kontaktovať! 🌟 
+        <a href="https://maps.app.goo.gl/ReNMpKffxdto3GGf9" target="_blank" rel="noopener noreferrer">Nájdete nás na Google Mapách</a>`,
+      imageSrc: "/images/article_2.jpg",
+      imageAlt: "Día de los Muertos Celebration",
+      imageLeft: true,
+    },
+    {
       title: "Halloweenska párty oslava",
       description:
         "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch. Sme hrdí, že môžeme prinášať čarovnú atmosféru do Trenčína a celého Trenčianskeho kraja.",
-      imageSrc: "/images/article_2.jpg",
+      imageSrc: "/images/article_3.jpg",
       imageAlt: "Halloween Party",
-      imageLeft: true,
+      imageLeft: false,
     },
   ]);
 
@@ -46,7 +54,7 @@ const Article: React.FC = () => {
         >
           <div className={styles.textContainer}>
             <h2>{article.title}</h2>
-            <p>{article.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: article.description }} />
             <div className={styles.priceListLink}>
               <Link to="/price-list">
                 <FontAwesomeIcon icon={faTag} /> Zobraziť náš cenník

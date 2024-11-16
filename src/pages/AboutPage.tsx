@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
       {/* Add top image */}
       <div className={styles.topImageContainer}>
         <img
-          src="/images/about-us.jpg"
+          src="/images/about-us-upd.jpg"
           alt="About Us"
           className={styles.topImage}
         />
