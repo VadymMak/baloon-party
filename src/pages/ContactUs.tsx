@@ -10,7 +10,6 @@ import qrCodeIcon from "../assets/icons/frame-removebg-preview.png";
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const phoneNumber = "+421(95)026-63-20";
 const instagramProfileUrl = "https://www.instagram.com/yourprofile";
-const siteUrl = "https://yourdomain.com";
 
 const ContactPage: React.FC = () => {
   const { t } = useTranslation();
