@@ -61,9 +61,7 @@ const ContactPage: React.FC = () => {
                 aria-label={t("contact.instagramProfile")}
               >
                 <InstagramIcon width={50} height={50} />
-                <span className={styles.balonPartyText}>
-                  {t("contact.businessName")}
-                </span>
+                <span className={styles.balonPartyText}>Baloon Party00</span>
               </a>
             </div>
           </section>
