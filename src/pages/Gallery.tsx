@@ -1,3 +1,5 @@
+// src/pages/Gallery.tsx
+
 import React, { useState, useEffect } from "react";
 import Loader from "../components/Loader";
 import styles from "./Gallery.module.scss";
@@ -19,6 +21,14 @@ const Gallery: React.FC = () => {
   const [images] = useState(galleryImages);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState<string | null>(null);
+
+  // Array of Instagram URLs
+  const videoUrls = [
+    "https://www.instagram.com/reel/DB5u4xeOxgB/?igsh=MTYxc2g4MWhsZ2tzNw==",
+    "https://www.instagram.com/reel/DBWaknIqopp/?igsh=ZXBpdXNvNTl1ajNv",
+    "https://www.instagram.com/reel/C-0c0oVq1pw/?igsh=MWdodXEwMmdjcG15",
+    "https://www.instagram.com/reel/C8ypGJkKax_/?igsh=MXJwMWpnbXZ2Z2NweQ==",
+  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -81,7 +91,9 @@ const Gallery: React.FC = () => {
           <FontAwesomeIcon icon={faTag} /> {t("gallery.viewPriceList")}
         </Link>
       </div>
-      <VideoSection />
+      <div className={styles["video-block"]}>
+        <VideoSection urls={videoUrls} />
+      </div>
     </div>
   );
 };
