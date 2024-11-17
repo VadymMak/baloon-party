@@ -73,21 +73,6 @@ const ContactPage: React.FC = () => {
           {/* FAQ Section */}
           <ContactFAQ />
 
-          {/* Location & Hours */}
-          {/* <section className={styles.locationHoursSection}>
-            <h2>{t("contact.locationTitle")}</h2>
-            <p>{t("contact.locationDescription")}</p>
-            <iframe
-              title="Our Location"
-              src="https://www.google.com/maps/embed?...your-location..."
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-            ></iframe>
-          </section> */}
-
           {/* Testimonials Section */}
           <section className={styles.testimonialsSection}>
             <h2>{t("contact.testimonialsTitle")}</h2>

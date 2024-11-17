@@ -3,12 +3,14 @@
   padding: 20px;
   background-color: transparent;
   border-radius: 8px;
+  margin: 0 auto; /* Center the FAQ section */
 }
 
 .title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
+  color: #2684be;
 }
 
 .faqList {
@@ -38,10 +40,10 @@
   color: #b11b1a;
 }
 
-.faqAnswer {
+.faqAnswer p {
   margin-top: 10px;
   font-size: 1rem;
-  color: #555;
+  color: #2684be;
 }
 
 .arrow {
@@ -59,4 +61,63 @@
 
 .arrowUp {
   transform: rotate(-135deg);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .contactFaq {
+    width: 90%; /* Adjust width to fit better on tablets */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .title {
+    font-size: 2rem; /* Adjust title font size */
+  }
+
+  .faqQuestion h3 {
+    font-size: 1.8rem; /* Adjust question font size */
+  }
+
+  .faqAnswer {
+    font-size: 0.9rem; /* Reduce font size for answers */
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px; /* Adjust arrow size */
+    padding: 2px; /* Adjust arrow padding */
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .contactFaq {
+    width: 70%; /* Make FAQ section take full width on mobile */
+    padding: 10px; /* Adjust padding for mobile */
+  }
+
+  .title {
+    font-size: 2rem; /* Smaller title font for mobile */
+    margin-bottom: 15px; /* Adjust margin */
+  }
+
+  .faqItem {
+    padding: 12px; /* Smaller padding for mobile */
+  }
+
+  .faqQuestion h3 {
+    font-size: 1.6rem; /* Smaller font for questions on mobile */
+  }
+
+  .faqAnswer p {
+    font-size: 1.5rem !important; /* Smaller font for answers */
+  }
+
+  .arrow {
+    width: 8px;
+    height: 8px; /* Adjust arrow size */
+    padding: 1px; /* Smaller arrow padding */
+  }
 }

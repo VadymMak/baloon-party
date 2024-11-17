@@ -51,6 +51,7 @@
     margin-bottom: 1rem;
     margin-left: 20px; /* Added left margin for mobile */
     margin-right: 20px; /* Added right margin for mobile */
+    z-index: 2; /* Ensures the paragraph stays above the overlay */
   }
 
   /* Contact Section */
@@ -154,21 +155,25 @@
   }
 
   @media (max-width: 768px) {
-    .content {
-      padding: 0 15px; /* Add more padding on the sides for mobile view */
+    .contactPage {
+      padding: 0 10px;
     }
-    h1 {
+    .content {
+      padding: 0 30px; /* Add more padding on the sides for mobile view */
+      p {
+        font-size: 1.4rem !important;
+        margin: 0 20px; /* Ensure proper text spacing on smaller screens */
+        z-index: 2; /* Ensures text stays above the overlay */
+        width: 70%;
+      }
+    }
+
+    .content h1 {
       margin: 0 30px; /* Adjust margin for better spacing */
       font-size: 2rem;
     }
 
-    p {
-      font-size: 1.3rem;
-      margin-left: 30px; /* Increase left margin */
-      margin-right: 30px; /* Increase right margin */
-    }
-
-    .contactGroup {
+    .content .contactGroup {
       flex-direction: column;
       align-items: center;
       margin-bottom: 1rem; /* Space between contact items */
@@ -188,8 +193,9 @@
       flex-direction: column;
       width: 100%;
       margin-top: 0.5rem;
+
       .balonPartyText {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
 
