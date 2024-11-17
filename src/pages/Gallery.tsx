@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import VideoSection from "../components/VideoSection";
 
 const galleryImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
@@ -80,6 +81,7 @@ const Gallery: React.FC = () => {
           <FontAwesomeIcon icon={faTag} /> {t("gallery.viewPriceList")}
         </Link>
       </div>
+      <VideoSection />
     </div>
   );
 };

@@ -1,0 +1,42 @@
+.videoSection {
+  padding: 40px 20px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #b11b1a;
+}
+
+.videoContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  .instagram-media {
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .videoContainer .instagram-media {
+    width: 100%;
+  }
+}
