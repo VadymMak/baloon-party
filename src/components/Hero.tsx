@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   return (
     <section className={styles.hero}>
       <h1>{t("greeting")}</h1>
-      <p>{t("partyPlace")}</p>
+      <h3>{t("partyPlace")}</h3>
     </section>
   );
 };

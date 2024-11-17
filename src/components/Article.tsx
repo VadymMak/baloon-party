@@ -3,49 +3,60 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Article.module.scss";
+import { useTranslation } from "react-i18next";
 
 interface IArticle {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   imageSrc: string;
   imageAlt: string;
   imageLeft: boolean;
+  googleMapLink?: string; // Optional for Google map link
 }
 
 const Article: React.FC = () => {
+  const { t } = useTranslation();
+  const [showMap, setShowMap] = useState(false); // State to control map visibility
+  const [googleMapLink, setGoogleMapLink] = useState("");
+
   const [articles] = useState<IArticle[]>([
     {
-      title: "Vianočná sviatočná oslava",
-      description:
-        "Naša vianočná oslava v Trenčíne sa niesla v duchu teplého a rodinného prostredia. Vianočné balónové dekorácie dokonale zapadli do sviatočnej atmosféry a pomohli vytvoriť nezabudnuteľnú vianočnú oslavu. V Trenčíne a jeho okolí sa tešíme, že môžeme vytvárať krásne spomienky na výnimočné chvíle.",
+      titleKey: "christmas_celebration_title",
+      descriptionKey: "christmas_celebration_description",
       imageSrc: "/images/article_1.jpg",
       imageAlt: "Christmas Celebration",
       imageLeft: false,
     },
     {
-      title: "Día de los Muertos oslava",
-      description: `🎃 Baloon Party pre Epiline: Halloween v štýle "Día de los Muertos"! 🎃 S radosťou sme sa podieľali na výzdobe salónu Epiline pri príležitosti Halloweenu. 🕸️✨ Pripravili sme:💀 Ručnú maľbu na sklo inšpirovanú tradičným mexickým sviatkom "Día de los Muertos" – plnú žiarivých farieb a jedinečných motívov.🎃 Dekoráciu z tekvice ozdobenú prírodnými kvetmi a doplnenú jemným osvetlením, ktoré vytvára dokonalú atmosféru. Ďakujeme salónu Epiline za dôveru a príležitosť priniesť trochu kreativity do tohto čarovného obdobia. ✨ Ak plánujete podobnú výzdobu pre svoju firmu alebo domov, neváhajte nás kontaktovať! 🌟
- 
-        <a href="https://maps.app.goo.gl/ReNMpKffxdto3GGf9" target="_blank" rel="noopener noreferrer">Nájdete nás na Google Mapách</a>`,
+      titleKey: "dia_de_los_muertos_celebration_title",
+      descriptionKey: "dia_de_los_muertos_celebration_description",
       imageSrc: "/images/article_2.jpg",
       imageAlt: "Día de los Muertos Celebration",
       imageLeft: true,
+      googleMapLink:
+        "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d83951.44136072394!2d17.989240284375548!3d48.88714029636577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0JHQtdC30YDRg9GH0L7QstCwIDY0LCA5MTEgMDEsINCi0YDQtdC90YfQuNC9!5e0!3m2!1sru!2str!4v1731840488748!5m2!1sru!2str",
     },
     {
-      title: "Halloweenska párty oslava",
-      description:
-        "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch. Sme hrdí, že môžeme prinášať čarovnú atmosféru do Trenčína a celého Trenčianskeho kraja.",
+      titleKey: "halloween_party_celebration_title",
+      descriptionKey: "halloween_party_celebration_description",
       imageSrc: "/images/article_3.jpg",
       imageAlt: "Halloween Party",
       imageLeft: false,
     },
   ]);
 
+  const openMap = (link: string) => {
+    setGoogleMapLink(link); // Set the link for the map
+    setShowMap(true); // Show the popup
+  };
+
+  const closeMap = () => {
+    setShowMap(false); // Close the map
+  };
+
   return (
     <section className={styles.articles}>
-      <h1 className={styles.sectionTitle}>
-        Nedávne oslavy a podujatia, ktoré sme dekorovali
-      </h1>
+      <h1 className={styles.sectionTitle}>{t("ourArticlesTitle")}</h1>
       {articles.map((article, index) => (
         <div
           key={index}
@@ -54,11 +65,20 @@ const Article: React.FC = () => {
           }`}
         >
           <div className={styles.textContainer}>
-            <h2>{article.title}</h2>
-            <p dangerouslySetInnerHTML={{ __html: article.description }} />
+            <h2>{t(article.titleKey)}</h2>
+            <p
+              dangerouslySetInnerHTML={{ __html: t(article.descriptionKey) }}
+            />
+            {article.googleMapLink && (
+              <button
+                onClick={() =>
+                  article.googleMapLink && openMap(article.googleMapLink)
+                }
+              ></button>
+            )}
             <div className={styles.priceListLink}>
               <Link to="/price-list">
-                <FontAwesomeIcon icon={faTag} /> Zobraziť náš cenník
+                <FontAwesomeIcon icon={faTag} /> {t("view_price_list")}
               </Link>
             </div>
           </div>
@@ -71,6 +91,25 @@ const Article: React.FC = () => {
           </div>
         </div>
       ))}
+
+      {/* Google Maps Popup */}
+      {showMap && googleMapLink && (
+        <div className={styles.googleMapOverlay}>
+          <iframe
+            title="Google Map"
+            src={googleMapLink}
+            width="80%"
+            height="80%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+          />
+
+          <button className={styles.closeOverlay} onClick={closeMap}>
+            ✖
+          </button>
+        </div>
+      )}
     </section>
   );
 };

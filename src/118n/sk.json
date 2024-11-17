@@ -1,5 +1,23 @@
 {
   "greeting": "Vitajte na Balónovej Párty!",
   "partyPlace": "Your place for balloon decorations and party services.",
-  "home": "Domov"
+
+  "aboutUs": "O nás",
+  "aboutUsIntroduction": " Vitajte na stránke Baloon Party00! Sme profesionáli v tvorbe dekorácií a fotostien pre vaše výnimočné chvíle v Trenčíne a celom Trenčianskom kraji. Naším cieľom je priniesť do vášho sviatočného dňa jedinečnú atmosféru a farebnú krásu, ktorá zanechá spomienky plné radosti a šťastia.",
+  "aboutUsGoal": "Milujeme prinášať svetlé emócie a robiť oslavy nezabudnuteľnými. Či už plánujete svadbu, narodeninovú oslavu, firemný večierok alebo inú špeciálnu udalosť, postaráme sa o to, aby bola výnimočná.",
+  "aboutUsSpecialEvents": "Ponúkame tiež možnosť vytvoriť individuálny dizajn presne podľa vašich predstáv. Spolu s vami premeníme vaše nápady na skutočnosť a zabezpečíme, aby výzdoba dokonale ladila s vaším štýlom a charakterom udalosti.",
+  "aboutUsProposition": "Okrem toho ponúkame helium naplnené balóniky za cenu 5 EUR za kus, ktoré je možné prispôsobiť o jednu číslicu podľa vašich predstáv! Ideálne pre všetky druhy osláv a špeciálnych príležitostí.",
+  "aboutUsThanks": "Ďakujeme, že nám dôverujete s vašimi najkrajšími momentmi!",
+
+  "ourProducts": "Naše Produkty",
+
+  "ourArticlesTitle": "Nedávne oslavy a podujatia, ktoré sme dekorovali",
+  "view_price_list": "Zobraziť cenník",
+
+  "christmas_celebration_title": "Vianočná sviatočná oslava",
+  "christmas_celebration_description": "Naša vianočná oslava v Trenčíne sa niesla v duchu teplého a rodinného prostredia. Vianočné balónové dekorácie dokonale zapadli do sviatočnej atmosféry a pomohli vytvoriť nezabudnuteľnú vianočnú oslavu. V Trenčíne a jeho okolí sa tešíme, že môžeme vytvárať krásne spomienky na výnimočné chvíle.",
+  "dia_de_los_muertos_celebration_title": "Día de los Muertos oslava",
+  "dia_de_los_muertos_celebration_description": "🎃 Baloon Party pre Epiline: Halloween v štýle Día de los Muertos! 🎃 S radosťou sme sa podieľali na výzdobe salónu Epiline pri príležitosti Halloweenu. 🕸️✨ Pripravili sme:💀 Ručnú maľbu na sklo inšpirovanú tradičným mexickým sviatkom Día de los Muertos – plnú žiarivých farieb a jedinečných motívov.🎃 Dekoráciu z tekvice ozdobenú prírodnými kvetmi a doplnenú jemným osvetlením, ktoré vytvára dokonalú atmosféru. Ďakujeme salónu Epiline za dôveru a príležitosť priniesť trochu kreativity do tohto čarovného obdobia. ✨ Ak plánujete podobnú výzdobu pre svoju firmu alebo domov, neváhajte nás kontaktovať! 🌟 <a href='https://maps.app.goo.gl/ReNMpKffxdto3GGf9' target='_blank' rel='noopener noreferrer'>Nájdete nás na Google Mapách</a>",
+  "halloween_party_celebration_title": "Halloweenska párty oslava",
+  "halloween_party_celebration_description": "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch."
 }

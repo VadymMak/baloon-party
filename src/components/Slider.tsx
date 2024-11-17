@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Slider.module.scss";
 
+import { useTranslation } from "react-i18next";
+
 const images = [
   { id: 1, src: "/images/gallery/slide_1.jpg", label: "Narodeniny" },
   { id: 2, src: "/images/gallery/slide_2.jpg", label: "Dekorácie" },
@@ -14,7 +16,8 @@ const Slider: React.FC = () => {
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageSrc, setModalImageSrc] = useState<string>("");
-  const [isHovered, setIsHovered] = useState<boolean>(false); // Track hover state
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   // Move to the next slide
   const nextSlide = () => {
@@ -54,7 +57,7 @@ const Slider: React.FC = () => {
       onMouseEnter={() => setIsHovered(true)} // Stop interval on hover
       onMouseLeave={() => setIsHovered(false)} // Restart interval on hover leave
     >
-      <h2>Naše Produkty</h2>
+      <h2>{t("ourProducts")}</h2>
       <div className={styles.sliderContainer}>
         <button className={styles.arrowButton} onClick={prevSlide}>
           &#8249;

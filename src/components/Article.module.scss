@@ -1,14 +1,14 @@
 .articles {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Space between articles */
+  gap: 2rem;
   padding: 2rem;
-  background: transparent; /* Transparent background for the section */
+  background: transparent;
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
-  font-family: cursive;
+  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
   color: #b11b1a;
   margin-bottom: 2rem;
   text-align: center;
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent; /* Remove the white background here */
+  background-color: transparent;
   padding: 1rem;
   border-radius: 8px;
 }
@@ -41,32 +41,61 @@
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   color: #b11b1a;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.8rem !important;
   color: #333;
 }
 
 .imageLeft {
-  flex-direction: row-reverse; /* Image on the left */
+  flex-direction: row-reverse;
 }
 
 .imageRight {
-  flex-direction: row; /* Image on the right */
+  flex-direction: row;
 }
 
 .priceListLink a {
   color: #b11b1a;
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
-/* Media query for tablet view */
+.googleMapOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.googleMapOverlay iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+}
+
+.closeOverlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .article {
-    flex-direction: column; /* Stack article content and image on top of each other */
+    flex-direction: column;
   }
 
   .imageContainer {
