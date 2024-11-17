@@ -1,3 +1,4 @@
+/* Default font for the whole page */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,8 +6,14 @@ body {
   color: #333;
 }
 
-.banner p {
-  font-family: "Pacifico", "Brush Script", cursive;
+/* Apply Dancing Script for Slovak */
+html[lang="sk"] body {
+  font-family: "Dancing Script", cursive;
+}
+
+/* Apply Dancing Script for Ukrainian */
+html[lang="ua"] body {
+  font-family: "Dancing Script", cursive;
 }
 
 *,
@@ -15,7 +22,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 /* General styles */

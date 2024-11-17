@@ -1,11 +1,17 @@
 // src/components/Hero.tsx
 import React from "react";
 import styles from "./Hero.module.scss";
-const Hero: React.FC = () => (
-  <section className={styles.hero}>
-    <h1>Vitajte na Balónovej Párty!</h1>
-    <p>Vaše miesto pre balónové dekorácie a párty služby.</p>
-  </section>
-);
+import { useTranslation } from "react-i18next";
+
+const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section className={styles.hero}>
+      <h1>{t("greeting")}</h1>
+      <p>{t("partyPlace")}</p>
+    </section>
+  );
+};
 
 export default Hero;

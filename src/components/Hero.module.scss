@@ -15,8 +15,8 @@
   padding-top: 10px; // Add some padding from the top
 
   h1 {
-    font-size: 3rem; // Default large heading size
-    font-family: cursive;
+    font-size: 3.5rem; // Default large heading size
+    font-family: "Dancing Script", cursive;
     margin-bottom: 1rem; // Space below the heading
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: #b11c1a;
@@ -24,10 +24,12 @@
 
   p {
     font-size: 2rem; // Default paragraph size
-    margin-bottom: 2rem; // Space below the paragraph
     font-family: cursive;
-    text-transform: uppercase;
+    margin-bottom: 3rem; // Space below the paragraph
+    font-family: "Dancing Script", cursive;
+    // text-transform: uppercase;
     color: #2584be; // Paragraph color
+    font-size: 2.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); // Shadow for better visibility
   }
 

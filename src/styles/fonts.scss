@@ -1,17 +1,29 @@
 /* src/styles/fonts.scss */
 
 @font-face {
-  font-family: "Myriad Pro";
-  src: url("../fonts/MyriadPro-Regular.oft") format("oft"),
-    url("../fonts/MyriadPro-Regular.ttf") format("truetype");
-  font-weight: normal; /* or bold if you have a bold version */
-  font-style: italic; /* for cursive style */
-}
-
-@font-face {
-  font-family: "Arno Pro";
-  src: url("../fonts/ArnoPro-Regular.otf") format("otf"),
-    url("../fonts/ArnoPro-Regular.ttf") format("truetype");
+  font-family: "Dancing Script";
+  src: url("../fonts/GreatVibes-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+
+// @font-face {
+//   font-family: "Myriad Pro";
+//   src: url("../fonts/MyriadPro-Regular.otf") format("oft");
+//   font-weight: normal; /* or bold if you have a bold version */
+//   font-style: italic; /* for cursive style */
+// }
+
+// @font-face {
+//   font-family: "Arno Pro";
+//   src: url("../fonts/ArnoPro-Regular.otf") format("otf");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "Bettermilk";
+//   src: url("../fonts/Bettermilk.otf") format("otf");
+//   font-weight: normal;
+//   font-style: normal;
+// }
