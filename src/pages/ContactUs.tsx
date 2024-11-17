@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import PhoneIcon from "../assets/svg/PhoneIcon";
 import InstagramIcon from "../assets/svg/InstagramIcon";
 import qrCodeIcon from "../assets/icons/frame-removebg-preview.png";
+import ContactFAQ from "../components/ContactFaq";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const phoneNumber = "+421(95)026-63-20";
@@ -21,7 +22,6 @@ const ContactPage: React.FC = () => {
           "contact.title"
         )} | Balón Party00 - Event Decorations & Photo Walls`}</title>
         <meta name="description" content={t("contact.description")} />
-        {/* Add other meta tags here with translated content as needed */}
       </Helmet>
 
       <div className={styles.contactPage}>
@@ -29,17 +29,15 @@ const ContactPage: React.FC = () => {
           <h1>{t("contact.title")}</h1>
           <p>{t("contact.description")}</p>
 
-          {/* Contact Section */}
           <section
             className={styles.contactSection}
             aria-labelledby="contact-methods"
           >
-            {/* Phone Section */}
             <div className={styles.contactGroup}>
               <a
                 href={isMobile ? `tel:${phoneNumber}` : "#"}
                 className={styles.phoneIconLink}
-                aria-label={t("contact.callUs")}
+                aria-label={t("contact.phone")}
               >
                 <PhoneIcon width={50} height={50} />
               </a>
@@ -51,7 +49,6 @@ const ContactPage: React.FC = () => {
               </a>
             </div>
 
-            {/* Instagram and Balón Party Text */}
             <div className={styles.socialMedia}>
               <a
                 href={instagramProfileUrl}
@@ -61,14 +58,41 @@ const ContactPage: React.FC = () => {
                 aria-label={t("contact.instagramProfile")}
               >
                 <InstagramIcon width={50} height={50} />
-                <span className={styles.balonPartyText}>Baloon Party00</span>
+                <span className={styles.balonPartyText}>
+                  {t("contact.businessName")}
+                </span>
               </a>
             </div>
           </section>
 
+          {/* QR Code */}
           <div className={styles.qrCode}>
             <img src={qrCodeIcon} alt="QR Code" />
           </div>
+
+          {/* FAQ Section */}
+          <ContactFAQ />
+
+          {/* Location & Hours */}
+          {/* <section className={styles.locationHoursSection}>
+            <h2>{t("contact.locationTitle")}</h2>
+            <p>{t("contact.locationDescription")}</p>
+            <iframe
+              title="Our Location"
+              src="https://www.google.com/maps/embed?...your-location..."
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+            ></iframe>
+          </section> */}
+
+          {/* Testimonials Section */}
+          <section className={styles.testimonialsSection}>
+            <h2>{t("contact.testimonialsTitle")}</h2>
+            {/* Implement a carousel or card layout for testimonials */}
+          </section>
         </div>
       </div>
     </>

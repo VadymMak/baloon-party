@@ -46,5 +46,41 @@
     "phone": "Zavolajte nám",
     "instagramProfile": "Navštívte náš profil na Instagrame",
     "businessName": "Balón Party00"
-  }
+  },
+
+  "faqTitle": "Často kladené otázky",
+  "faqItems": [
+    {
+      "question": "Aké typy dekorácií z balónov ponúkate?",
+      "answer": "Ponúkame rôzne dekorácie z balónov, vrátane oblúkov, centropiérov, balónových kytíc a vlastných návrhov pre všetky príležitosti."
+    },
+    {
+      "question": "Ako môžem objednať službu dekorácie balónmi?",
+      "answer": "Objednávku môžete zadať na našej stránke 'Objednávky' alebo nás kontaktujte priamo telefonicky alebo e-mailom."
+    },
+    {
+      "question": "Aké sú ceny vašich dekorácií z balónov?",
+      "answer": "Ceny sa líšia podľa typu dekorácie a veľkosti podujatia. Kontaktujte nás pre individuálnu ponuku."
+    },
+    {
+      "question": "Ponúkate vlastné návrhy dekorácií z balónov?",
+      "answer": "Áno, ponúkame plne prispôsobiteľné návrhy dekorácií z balónov podľa témy vášho podujatia."
+    },
+    {
+      "question": "Koľko času vopred by som mal objednať dekorácie z balónov?",
+      "answer": "Odporúčame objednať dekorácie minimálne 2-3 týždne vopred, aby sme zabezpečili dostupnosť, najmä pri väčších podujatiach."
+    },
+    {
+      "question": "Môžete doručiť balóniky na miesto konania podujatia?",
+      "answer": "Áno, ponúkame doručenie balónov na miesto konania podujatia za príplatok."
+    },
+    {
+      "question": "Poskytujete heliové balóniky?",
+      "answer": "Áno, poskytujeme heliové balóniky na vaše podujatia."
+    },
+    {
+      "question": "Čo sa stane, ak musím zrušiť alebo preložiť svoju objednávku?",
+      "answer": "Prosím, kontaktujte nás aspoň 48 hodín pred podujatím, ak chcete zrušiť alebo preložiť svoju objednávku. Platí podmienky."
+    }
+  ]
 }
