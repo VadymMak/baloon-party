@@ -19,5 +19,32 @@
   "dia_de_los_muertos_celebration_title": "Día de los Muertos oslava",
   "dia_de_los_muertos_celebration_description": "🎃 Baloon Party pre Epiline: Halloween v štýle Día de los Muertos! 🎃 S radosťou sme sa podieľali na výzdobe salónu Epiline pri príležitosti Halloweenu. 🕸️✨ Pripravili sme:💀 Ručnú maľbu na sklo inšpirovanú tradičným mexickým sviatkom Día de los Muertos – plnú žiarivých farieb a jedinečných motívov.🎃 Dekoráciu z tekvice ozdobenú prírodnými kvetmi a doplnenú jemným osvetlením, ktoré vytvára dokonalú atmosféru. Ďakujeme salónu Epiline za dôveru a príležitosť priniesť trochu kreativity do tohto čarovného obdobia. ✨ Ak plánujete podobnú výzdobu pre svoju firmu alebo domov, neváhajte nás kontaktovať! 🌟 <a href='https://maps.app.goo.gl/ReNMpKffxdto3GGf9' target='_blank' rel='noopener noreferrer'>Nájdete Epiline na Google Mapách</a>",
   "halloween_party_celebration_title": "Halloweenska párty oslava",
-  "halloween_party_celebration_description": "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch."
+  "halloween_party_celebration_description": "Vytvorili sme strašidelnú, no zábavnú atmosféru na Halloweenskej párty v Trenčíne, kde sa hostia tešili na tematickú výzdobu a originálne balónové dekorácie. Naša práca zanechala nezabudnuteľný dojem na všetkých účastníkoch.",
+
+  "aboutPage": {
+    "title": "Welcome to the Balloon Party!",
+    "paragraph1": "Welcome to Balloon Party! We are professionals in creating decorations and photo walls for your special moments in Trenčín and the entire Trenčín region. Our goal is to bring a unique atmosphere and colorful beauty to your festive day, leaving memories full of joy and happiness.",
+    "paragraph2": "We love to bring bright emotions and make celebrations unforgettable. Whether you’re planning a wedding, birthday party, corporate event, or any other special occasion, we ensure it will be extraordinary.",
+    "paragraph3": "We also offer the option to create a custom design tailored to your specific ideas. Together with you, we turn your ideas into reality and make sure the decoration perfectly matches your style and the event’s character.",
+    "priceListLink": "View Our Price List"
+  },
+
+  "gallery": {
+    "title": "Galéria našich balónových dekorácií",
+    "aboutCompanyTitle": "O našej spoločnosti",
+    "aboutCompanyText1": "Sme odhodlaní prinášať radosť a eleganciu do každej oslavy. Našimi kreatívnymi balónovými dekoráciami chceme vaše udalosti urobiť nezabudnuteľnými.",
+    "aboutCompanyText2": "Naším cieľom je rozšíriť naše služby a držať krok s najnovšími trendmi, aby sme vám mohli ponúknuť jedinečné a nezabudnuteľné zážitky. Pridajte sa k nám, keď oživujeme vaše predstavy, jednu oslavu za druhou!",
+    "aboutCompanyText3": "Pre viac informácií sledujte naše sociálne siete.",
+    "viewPriceList": "Zobraziť náš cenník",
+    "lightboxAlt": "Zobraziť na celú obrazovku",
+    "imageAltPrefix": "Dekoratívna balónová výzdoba s názvom "
+  },
+
+  "contact": {
+    "title": "Kontaktujte nás",
+    "description": "Naše profesionálne služby balónových dekorácií poskytujeme v Trenčíne a celom trenčianskom regióne. Nezdráhajte sa nás kontaktovať pre akékoľvek otázky alebo ďalšie informácie.",
+    "phone": "Zavolajte nám",
+    "instagramProfile": "Navštívte náš profil na Instagrame",
+    "businessName": "Balón Party00"
+  }
 }

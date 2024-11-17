@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from "react";
-import Loader from "../components/Loader"; // Import the Loader component
+import Loader from "../components/Loader";
 import styles from "./Gallery.module.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const galleryImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
-  url: `/images/gallery/gallery_${i + 1}.jpg`, // Path to your images
-  title: `Balloon Party`,
+  url: `/images/gallery/gallery_${i + 1}.jpg`,
+  title: "Balloon Party",
 }));
 
 const Gallery: React.FC = () => {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
-  const [images] = useState(galleryImages); // Removed `setImages` since it's not needed
+  const [images] = useState(galleryImages);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState<string | null>(null);
 
-  // Simulate loading with a timeout
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false); // Set loading to false after data is "fetched"
-    }, 2000); // Simulate a 2-second loading time
+      setLoading(false);
+    }, 2000);
   }, []);
 
   const openLightbox = (imageUrl: string) => {
@@ -35,24 +36,22 @@ const Gallery: React.FC = () => {
   };
 
   if (loading) {
-    return <Loader />; // Display the loader while loading is true
+    return <Loader />;
   }
 
   return (
     <div className={styles["gallery-container"]}>
-      <h2 className={styles["gallery-title"]}>
-        Our Balloon Decorations Gallery
-      </h2>
+      <h2 className={styles["gallery-title"]}>{t("gallery.title")}</h2>
       <div className={styles["gallery-grid"]}>
         {images.map((image) => (
           <div className={styles["gallery-item"]} key={image.id}>
             <img
               src={image.url}
-              alt={`Decorative balloon setup titled ${image.title}`}
+              alt={`${t("gallery.imageAltPrefix")}${image.title}`}
               title={image.title}
               className={styles["gallery-image"]}
               loading="lazy"
-              onClick={() => openLightbox(image.url)} // Open lightbox when image is clicked
+              onClick={() => openLightbox(image.url)}
             />
             <div className={styles["image-overlay"]}>
               <span className={styles["image-title"]}>{image.title}</span>
@@ -61,34 +60,24 @@ const Gallery: React.FC = () => {
         ))}
       </div>
 
-      {/* Lightbox */}
       {isLightboxOpen && (
         <div className={styles.lightbox} onClick={closeLightbox}>
           <img
             src={currentImage || ""}
-            alt="Full-screen view"
+            alt={t("gallery.lightboxAlt")}
             className={styles["lightbox-image"]}
           />
         </div>
       )}
       <div className={styles["company-info"]}>
-        <h3>About Our Company</h3>
-        <p>
-          Sme odhodlaní prinášať radosť a eleganciu do každej oslavy. Našimi
-          kreatívnymi balónovými dekoráciami chceme vaše udalosti urobiť
-          nezabudnuteľnými.
-        </p>
-        <p>
-          Naším cieľom je rozšíriť naše služby a držať krok s najnovšími
-          trendmi, aby sme vám mohli ponúknuť jedinečné a nezabudnuteľné
-          zážitky. Pridajte sa k nám, keď oživujeme vaše predstavy, jednu oslavu
-          za druhou!
-        </p>
-        <p>Pre viac informácií sledujte naše sociálne siete.</p>
+        <h3>{t("gallery.aboutCompanyTitle")}</h3>
+        <p>{t("gallery.aboutCompanyText1")}</p>
+        <p>{t("gallery.aboutCompanyText2")}</p>
+        <p>{t("gallery.aboutCompanyText3")}</p>
       </div>
       <div className={styles.priceListLink}>
         <Link to="/price-list">
-          <FontAwesomeIcon icon={faTag} /> View Our Price List
+          <FontAwesomeIcon icon={faTag} /> {t("gallery.viewPriceList")}
         </Link>
       </div>
     </div>
