@@ -22,7 +22,7 @@ const ContactPage: React.FC = () => {
           "contact.title"
         )} | Balón Party00 - Event Decorations & Photo Walls`}</title>
         <meta name="description" content={t("contact.description")} />
-        {/* Other meta tags here */}
+        {/* Add other meta tags here with translated content as needed */}
       </Helmet>
 
       <div className={styles.contactPage}>
@@ -40,7 +40,7 @@ const ContactPage: React.FC = () => {
               <a
                 href={isMobile ? `tel:${phoneNumber}` : "#"}
                 className={styles.phoneIconLink}
-                aria-label={t("contact.phone")}
+                aria-label={t("contact.callUs")}
               >
                 <PhoneIcon width={50} height={50} />
               </a>
@@ -62,7 +62,9 @@ const ContactPage: React.FC = () => {
                 aria-label={t("contact.instagramProfile")}
               >
                 <InstagramIcon width={50} height={50} />
-                <span className={styles.balonPartyText}>Balloon Party00</span>
+                <span className={styles.balonPartyText}>
+                  {t("contact.businessName")}
+                </span>
               </a>
             </div>
           </section>
