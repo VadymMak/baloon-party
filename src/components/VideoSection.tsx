@@ -1,6 +1,8 @@
 // src/components/VideoSection.tsx
-
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addVideoUrls } from "../store/instagramSlice";
+import { RootState } from "../store/store";
 import styles from "./VideoSection.module.scss";
 
 interface VideoSectionProps {
@@ -8,24 +10,51 @@ interface VideoSectionProps {
 }
 
 const VideoSection: React.FC<VideoSectionProps> = ({ urls }) => {
+  const dispatch = useDispatch();
+
+  // Retrieve the video URLs from the Redux store and type the state properly
+  const storedVideoUrls = useSelector(
+    (state: RootState) => state.instagram.videoUrls
+  );
+
+  // Effect to add video URLs to Redux store if they are not already present
   useEffect(() => {
-    // Load Instagram Embed script after the component mounts
+    if (urls.length > 0 && storedVideoUrls.length === 0) {
+      dispatch(addVideoUrls(urls)); // Dispatch to store
+    }
+  }, [urls, storedVideoUrls, dispatch]);
+
+  // Dynamically load Instagram Embed script
+  useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://www.instagram.com/embed.js";
     script.async = true;
     document.body.appendChild(script);
 
-    // Clean up the script when the component unmounts
+    // Initialize Instagram embeds after the script is loaded
+    script.onload = () => {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process(); // Process all Instagram embeds
+      }
+    };
+
     return () => {
-      document.body.removeChild(script);
+      document.body.removeChild(script); // Cleanup
     };
   }, []);
+
+  // Re-run the Instagram embed process when stored video URLs change
+  useEffect(() => {
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process(); // Re-initialize Instagram embeds when video URLs change
+    }
+  }, [storedVideoUrls]);
 
   return (
     <section className={styles.videoSection}>
       <h2 className={styles.title}>Watch Our Work</h2>
       <div className={styles.videoContainer}>
-        {urls.map((url, index) => (
+        {storedVideoUrls.map((url: string, index: number) => (
           <blockquote
             key={index}
             className="instagram-media"
