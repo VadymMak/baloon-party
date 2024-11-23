@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import Slider from "../components/Slider";
 import { useTranslation } from "react-i18next";
+import Testimonials from "../components/Testimonials";
 
 const AboutPage: React.FC = () => {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ const AboutPage: React.FC = () => {
         </div>
       </div>
       <Slider />
+      <Testimonials />
     </>
   );
 };

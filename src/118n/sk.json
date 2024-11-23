@@ -83,5 +83,11 @@
       "answer": "Prosím, kontaktujte nás aspoň 48 hodín pred podujatím, ak chcete zrušiť alebo preložiť svoju objednávku. Platí podmienky."
     }
   ],
-  "watchOurWork": "Sledujte našu prácu"
+  "watchOurWork": "Sledujte našu prácu",
+  "testimonials": {
+    "title": "Čo hovoria naši zákazníci",
+    "testimonial1": "Skvelá služba a úžasné balóniky! Tím všetko zorganizoval perfektne a dekorácie prekonali moje očakávania. Určite odporúčam každému, kto hľadá kvalitné dekorácie na akúkoľvek príležitosť!",
+    "testimonial2": "Šťastné a veselé Alina! Sme šťastní, že sme si mohli objednať balóniky na tvoje narodeniny. Všetci sme boli nadšení z farieb a tvarov balónov, ktoré dokonale zapadli do celkovej atmosféry. Bola to krásna oslava a veľa vďaka aj týmto nádherným dekoráciám. Veľmi odporúčam!",
+    "testimonial3": "Vďaka dekorácii od Baloon Party nás videlo a navštívilo veľké množstvo ľudí, ktorí o nás nevedeli. Ďakujeme!"
+  }
 }
