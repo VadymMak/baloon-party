@@ -30,7 +30,8 @@ const Footer: React.FC = () => (
       <div className={styles.socialMediaGroup}>
         <div className={styles.socialMedia}>
           <a
-            href="https://instagram.com/yourusername"
+            // href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/baloon_party00/profilecard/?igsh=bm84NXFuNzN5cGhh"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}
@@ -42,7 +43,8 @@ const Footer: React.FC = () => (
             />
           </a>
           <a
-            href="https://itiktok.com/yourusername"
+            // href="https://itiktok.com/yourusername"
+            href="https://www.tiktok.com/@baloon.party00?_t=8rXpoA8ecti&_r=1"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}
@@ -54,6 +56,7 @@ const Footer: React.FC = () => (
             />
           </a>
           <a
+            // href="https://t.me/yourusername"
             href="https://t.me/yourusername"
             target="_blank"
             rel="noopener noreferrer"
@@ -66,7 +69,7 @@ const Footer: React.FC = () => (
             />
           </a>
           <a
-            href="https://wa.me/yourphonenumber"
+            href="https://wa.me/421950266320"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}
@@ -78,7 +81,8 @@ const Footer: React.FC = () => (
             />
           </a>
           <a
-            href="https://facebook/yourphonenumber"
+            // href="https://facebook/yourphonenumber"
+            href="https://www.facebook.com/share/15H6znYrTq/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}

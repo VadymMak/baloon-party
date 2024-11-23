@@ -72,12 +72,6 @@ const ContactPage: React.FC = () => {
 
           {/* FAQ Section */}
           <ContactFAQ />
-
-          {/* Testimonials Section */}
-          <section className={styles.testimonialsSection}>
-            <h2>{t("contact.testimonialsTitle")}</h2>
-            {/* Implement a carousel or card layout for testimonials */}
-          </section>
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addVideoUrls } from "../store/instagramSlice";
 import { RootState } from "../store/store";
 import styles from "./VideoSection.module.scss";
+import { t } from "i18next";
 
 interface VideoSectionProps {
   urls: string[];
@@ -52,7 +53,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ urls }) => {
 
   return (
     <section className={styles.videoSection}>
-      <h2 className={styles.title}>Watch Our Work</h2>
+      <h2 className={styles.title}>{t("watchOurWork")}</h2>
       <div className={styles.videoContainer}>
         {storedVideoUrls.map((url: string, index: number) => (
           <blockquote
