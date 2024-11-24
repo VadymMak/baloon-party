@@ -31,7 +31,8 @@ const Footer: React.FC = () => (
         <div className={styles.socialMedia}>
           <a
             // href="https://instagram.com/yourusername"
-            href="https://www.instagram.com/baloon_party00/profilecard/?igsh=bm84NXFuNzN5cGhh"
+            // href="https://www.instagram.com/baloon_party00/profilecard/?igsh=bm84NXFuNzN5cGhh"
+            href="https://www.instagram.com/baloon_party00"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}
@@ -57,7 +58,7 @@ const Footer: React.FC = () => (
           </a>
           <a
             // href="https://t.me/yourusername"
-            href="https://t.me/yourusername"
+            href="https://t.me/valeriiamukhina"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialItem}
