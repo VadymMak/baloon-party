@@ -3,21 +3,16 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensure padding and border do not affect width/height */
-}
-
-html,
-body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
 }
 
-// @font-face {
-//   font-family: "Dancing Script";
-//   src: url("../src/fonts/DancingScript-VariableFont_wght.ttf")
-//     format("truetype");
-//   font-weight: normal;
-//   font-style: normal;
-// }
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: clip; /* Prevents horizontal scroll WITHOUT breaking position: sticky */
+}
