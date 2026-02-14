@@ -68,6 +68,13 @@
     "businessName": "Балон Паті00"
   },
 
+  "contact.phone": "Телефон",
+  "contact.hours": "Робочі години",
+  "contact.hoursValue": "Пн–Сб: 9:00 – 20:00",
+  "contact.location": "Локація",
+  "contact.writeUs": "Напишіть нам",
+  "contact.scanQR": "Скануйте для Instagram",
+
   "faqTitle": "Часто задавані питання",
   "faqItems": [
     {

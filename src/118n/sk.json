@@ -68,6 +68,13 @@
     "businessName": "Balón Party00"
   },
 
+  "contact.phone": "Telefón",
+  "contact.hours": "Pracovné hodiny",
+  "contact.hoursValue": "Po–So: 9:00 – 20:00",
+  "contact.location": "Lokalita",
+  "contact.writeUs": "Napíšte nám",
+  "contact.scanQR": "Naskenujte pre Instagram",
+
   "faqTitle": "Často kladené otázky",
   "faqItems": [
     {
