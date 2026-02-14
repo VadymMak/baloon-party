@@ -1,184 +1,169 @@
-.contactPage {
-  position: relative;
-  background: url("../assets/contact-background-upd.jpg") no-repeat center center;
-  background-size: cover;
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
+.gallery {
   padding: 3rem 1.5rem;
-}
-
-.contactPage::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  z-index: 1;
-}
-
-.content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
 }
 
-.content h1 {
+.gallery h2 {
   font-size: 2.5rem;
   color: #b11c1a;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .subtitle {
   font-family: Arial, sans-serif !important;
   font-size: 0.95rem !important;
-  color: #555 !important;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  max-width: 500px;
+  color: #666 !important;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
 }
 
-/* Contact cards grid */
-.cards {
+/* Photo grid */
+.grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  width: 100%;
-  margin-bottom: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 1.25rem 1rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  text-decoration: none;
-  color: inherit;
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.cardIcon {
-  font-size: 1.75rem;
-}
-
-.cardLabel {
-  font-family: Arial, sans-serif !important;
-  font-size: 0.8rem !important;
-  color: #999 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cardValue {
-  font-family: Arial, sans-serif !important;
-  font-size: 0.95rem !important;
-  color: #333 !important;
-  font-weight: 600;
-}
-
-/* Messenger section */
-.content h2 {
-  font-size: 2rem;
-  color: #b11c1a;
-  margin-bottom: 1.25rem;
-}
-
-.messengers {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-}
-
-.messengerBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: #fff;
-  border-radius: 50px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.messengerBtn:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-.messengerBtn img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
+  filter: grayscale(30%);
+  transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-.messengerBtn span {
-  font-family: Arial, sans-serif !important;
-  font-size: 0.9rem !important;
-  color: #333 !important;
-  font-weight: 500;
+.item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
-/* QR Code */
-.qrSection {
+/* Lightbox */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  z-index: 2000;
+  cursor: pointer;
 }
 
-.qrSection img {
-  width: 160px;
-  height: auto;
+.fullImage {
+  max-width: 85%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  cursor: default;
 }
 
-.qrSection span {
-  font-family: Arial, sans-serif !important;
-  font-size: 0.8rem !important;
-  color: #999 !important;
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2001;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: none;
+  font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 2001;
+  line-height: 1;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.navPrev {
+  left: 1.5rem;
+}
+
+.navNext {
+  right: 1.5rem;
+}
+
+.counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
 }
 
 /* Tablet */
-@media (max-width: 600px) {
-  .cards {
-    grid-template-columns: 1fr;
-    max-width: 350px;
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .content h1 {
+  .gallery h2 {
     font-size: 2rem;
   }
+}
 
-  .messengers {
-    flex-direction: column;
-    align-items: center;
+/* Mobile */
+@media (max-width: 600px) {
+  .gallery {
+    padding: 2rem 0.75rem;
   }
 
-  .messengerBtn {
-    width: 200px;
-    justify-content: center;
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 
-  .qrSection img {
-    width: 130px;
+  .navPrev {
+    left: 0.5rem;
+  }
+
+  .navNext {
+    right: 0.5rem;
   }
 }
