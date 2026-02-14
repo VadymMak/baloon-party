@@ -3,14 +3,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   box-sizing: border-box;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.95) 0%,
     rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.95) 100%
   );
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logoContainer {
@@ -19,15 +24,15 @@
 }
 
 .logo {
-  height: 180px;
+  height: 80px;
   max-height: 100%;
   object-fit: contain;
+  transition: height 0.3s ease;
 }
 
 .nav {
   display: flex;
   gap: 6rem;
-  // padding-right: 3rem;
   padding-top: 1rem;
   transition: padding-right 0.3s ease, gap 0.3s ease;
 }
@@ -56,7 +61,7 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
   .logo {
-    height: 160px;
+    height: 70px;
   }
   .nav {
     gap: 3rem;
@@ -71,7 +76,7 @@
 /* Mobile Styles */
 @media (max-width: 800px) {
   .logo {
-    height: 100px;
+    height: 60px;
   }
 
   .nav {
