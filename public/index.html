@@ -30,7 +30,6 @@
     <meta property="og:image" content="https://baloon-party00.sk/images/my-photo-wall.jpg" />
     <meta property="og:url" content="https://baloon-party00.sk/" />
     <meta property="og:type" content="website" />
-    <meta property="og:type" content="website" />
     <link rel="canonical" href="https://baloon-party00.sk/" />
 
     <!-- Twitter Card Meta Tags -->
@@ -55,12 +54,59 @@
 
     <title>Balón Party — Balónové dekorácie a party služby v Trenčíne</title>
 
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Balón Party",
+        "description": "Profesionálna služba balónových dekorácií a organizovania párty v Trenčíne a okolí. Svadby, narodeniny, firemné akcie, fotosteny.",
+        "url": "https://baloon-party00.sk/",
+        "logo": "https://baloon-party00.sk/logo192.png",
+        "image": "https://baloon-party00.sk/images/my-photo-wall.jpg",
+        "telephone": "+421950266320",
+        "email": "baloon-party00@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Trenčín",
+          "addressRegion": "Trenčiansky kraj",
+          "addressCountry": "SK"
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.8945,
+            "longitude": 18.0444
+          },
+          "geoRadius": "50000"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          }
+        ],
+        "priceRange": "€€",
+        "sameAs": [
+          "https://www.instagram.com/baloon_party00",
+          "https://www.tiktok.com/@baloon.party00",
+          "https://www.facebook.com/share/15H6znYrTq/",
+          "https://t.me/valeriiamukhina"
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Valeriia Mukhina"
+        }
+      }
+    </script>
+
     <!-- Add JS to dynamically set the lang attribute (if needed) -->
     <script>
-      // Dynamically update the language attribute based on the current language (sk or uk)
-      document.documentElement.lang = "sk"; // Or dynamically based on your app's language context
+      document.documentElement.lang = "sk";
 
-      // Prevent translation on specific languages (in case JS is enabled)
       if (
         document.documentElement.lang !== "sk" &&
         document.documentElement.lang !== "uk"
