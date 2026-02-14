@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { width } = useWindowSize();
   const isMobile = width !== undefined && width <= 800;
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLanguage = useSelector(
     (state: RootState) => state.language.language
   );
@@ -33,18 +33,10 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
         <img src={Logo} alt="Balon Party Logo" className={styles.logo} />
       </div>
       <nav className={styles.nav}>
-        <Link to="/" className={styles.navLink}>
-          Domov
-        </Link>
-        <Link to="/services" className={styles.navLink}>
-          O nás
-        </Link>
-        <Link to="/gallery" className={styles.navLink}>
-          Galéria
-        </Link>
-        <Link to="/contact" className={styles.navLink}>
-          Kontakty
-        </Link>
+       <Link to="/" className={styles.navLink}>{t("navHome")}</Link>
+      <Link to="/services" className={styles.navLink}>{t("navAbout")}</Link>
+      <Link to="/gallery" className={styles.navLink}>{t("navGallery")}</Link>
+      <Link to="/contact" className={styles.navLink}>{t("navContact")}</Link>
       </nav>
 
       {/* Language dropdown with currentLanguage from Redux */}
