@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
 import { setLanguage } from "../store/languageSlice";
@@ -15,6 +15,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+  const location = useLocation();
   const { width } = useWindowSize();
   const isMobile = width !== undefined && width <= 800;
   const { t, i18n } = useTranslation();
@@ -27,19 +29,40 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
     i18n.changeLanguage(lang);
   };
 
+  const scrollToAbout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <img src={Logo} alt="Balon Party Logo" className={styles.logo} />
+        <Link to="/">
+          <img src={Logo} alt="Balón Party Logo" className={styles.logo} />
+        </Link>
       </div>
       <nav className={styles.nav}>
-       <Link to="/" className={styles.navLink}>{t("navHome")}</Link>
-      <Link to="/services" className={styles.navLink}>{t("navAbout")}</Link>
-      <Link to="/gallery" className={styles.navLink}>{t("navGallery")}</Link>
-      <Link to="/contact" className={styles.navLink}>{t("navContact")}</Link>
+        <Link to="/" className={styles.navLink}>
+          {t("navHome")}
+        </Link>
+        <a href="#about" className={styles.navLink} onClick={scrollToAbout}>
+          {t("navAbout")}
+        </a>
+        <Link to="/gallery" className={styles.navLink}>
+          {t("navGallery")}
+        </Link>
+        <Link to="/contact" className={styles.navLink}>
+          {t("navContact")}
+        </Link>
       </nav>
 
-      {/* Language dropdown with currentLanguage from Redux */}
       <LanguageDropdown
         changeLanguage={handleLanguageChange}
         currentLanguage={currentLanguage}

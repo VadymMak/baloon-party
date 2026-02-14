@@ -40,6 +40,10 @@
   align-items: center;
   flex: 1;
   justify-content: center;
+
+  & a {
+    font-size: 1.3rem !important;
+  }
 }
 
 .navLink {

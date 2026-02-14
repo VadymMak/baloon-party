@@ -9,7 +9,7 @@ const About: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <div className={styles.textContainer}>
         <h2>{t("aboutUs")}</h2>
         <p className={styles.intro}>{t("aboutUsIntroduction")}</p>

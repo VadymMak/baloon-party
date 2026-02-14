@@ -1,53 +1,55 @@
 .videoSection {
-  padding: 40px 20px;
-  background-color: transparent;
+  padding: 3rem 0 0;
   text-align: center;
 }
 
-.title {
+.videoSection h2 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #b11b1a;
+  color: #b11c1a;
+  margin-bottom: 2rem;
 }
 
-.videoContainer {
+.videoGrid {
   display: grid;
-  gap: 20px;
-  max-width: 100%;
-  margin: 0 auto;
-
-  // Default to two columns
   grid-template-columns: repeat(2, 1fr);
-
-  .instagram-media {
-    width: 100%;
-    max-width: 100%;
-  }
+  gap: 1.5rem;
+  max-width: 100%;
 }
 
-// Responsive Adjustments
+.videoItem {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videoItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet */
 @media (max-width: 768px) {
-  .title {
+  .videoSection h2 {
     font-size: 2rem;
   }
 
-  // Switch to one column layout on smaller screens
-  .videoContainer {
+  .videoGrid {
     grid-template-columns: 1fr;
-  }
-
-  .videoContainer .instagram-media {
-    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
+/* Mobile */
+@media (max-width: 480px) {
+  .videoSection {
+    padding: 2rem 0 0;
+  }
+
+  .videoGrid {
+    gap: 1rem;
+  }
 }
