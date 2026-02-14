@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   box-sizing: border-box;
   background: linear-gradient(
     to right,
@@ -24,10 +24,11 @@
 .logoContainer {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo {
-  height: 80px;
+  height: 100px;
   max-height: 100%;
   object-fit: contain;
   transition: height 0.3s ease;
@@ -35,9 +36,10 @@
 
 .nav {
   display: flex;
-  gap: 6rem;
-  padding-top: 1rem;
-  transition: padding-right 0.3s ease, gap 0.3s ease;
+  gap: 4rem;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .navLink {
@@ -64,15 +66,17 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
   .logo {
-    height: 70px;
+    height: 80px;
   }
   .nav {
-    gap: 3rem;
-    padding-top: 2rem;
+    gap: 2rem;
   }
 
   .navLink {
     font-size: 1.3rem;
+    width: 85px;
+    height: 145px;
+    line-height: 80px;
   }
 }
 
@@ -91,7 +95,7 @@
     font-size: 3rem;
     cursor: pointer;
     color: #333;
-    padding-right: 2rem;
+    padding-right: 1rem;
   }
 }
 
