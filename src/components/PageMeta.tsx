@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 const PageMeta: React.FC = () => {
   return (
     <Helmet>
-      <html lang="sk" /> {/* Set the language to Slovak */}
+      <html lang="sk" />
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -14,42 +14,37 @@ const PageMeta: React.FC = () => {
       />
       <meta
         name="keywords"
-        content="Trenčín, dekorácie, fotosteny, svadby, narodeniny, firemné akcie, oslavy, party dekorácie, personalizovaný dizajn, eventy, kreatívne dekorácie, fototapety, dekorácia pre udalosti"
+        content="Trenčín, dekorácie, fotosteny, svadby, narodeniny, firemné akcie, oslavy, party dekorácie, balónové dekorácie, eventy, kreatívne dekorácie, balón party Trenčín"
       />
-      <meta name="author" content="Balloon Party00" />
+      <meta name="author" content="Valeriia Mukhina" />
+      <link rel="canonical" href="https://baloon-party00.sk/" />
+
+      {/* Open Graph */}
       <meta
         property="og:title"
-        content="Balloon Party00 - Tvorba dekorácií a fotostien pre nezabudnuteľné oslavy"
+        content="Balón Party — Balónové dekorácie a party služby v Trenčíne"
       />
       <meta
         property="og:description"
-        content="Vytvárame jedinečné dekorácie a fotosteny pre nezabudnuteľné chvíle a oslavy po celom Slovensku."
+        content="Vytvárame jedinečné dekorácie a fotosteny pre nezabudnuteľné chvíle a oslavy v Trenčíne a okolí."
       />
-      <meta property="og:image" content="/images/my-photo-wall.jpg" />
-      <meta property="og:url" content="https://baloon-party.netlify.app/" />
+      <meta property="og:image" content="https://baloon-party00.sk/images/my-photo-wall.jpg" />
+      <meta property="og:url" content="https://baloon-party00.sk/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="sk_SK" />
+      <meta property="og:site_name" content="Balón Party" />
+
+      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@ubmarket" />
       <meta
         name="twitter:title"
-        content="Balloon Party00 - Tvorba dekorácií a fotostien pre nezabudnuteľné oslavy"
+        content="Balón Party — Balónové dekorácie a party služby v Trenčíne"
       />
       <meta
         name="twitter:description"
-        content="Vytvárame jedinečné dekorácie a fotosteny pre nezabudnuteľné chvíle a oslavy po celom Slovensku."
+        content="Vytvárame jedinečné dekorácie a fotosteny pre nezabudnuteľné chvíle a oslavy v Trenčíne a okolí."
       />
-      <meta name="twitter:image" content="/images/twitter-large-image.png" />
-      {/* Instagram, Telegram, WhatsApp, TikTok, and Viber are usually referenced directly with links */}
-      <meta
-        name="instagram"
-        content="https://www.instagram.com/your-instagram-handle"
-      />
-      <meta name="telegram" content="https://t.me/your-telegram-handle" />
-      <meta name="whatsapp" content="https://wa.me/your-whatsapp-number" />
-      <meta
-        name="tiktok"
-        content="https://www.tiktok.com/@your-tiktok-handle"
-      />
-      <meta name="viber" content="viber://chat?number=your-phone-number" />
+      <meta name="twitter:image" content="https://baloon-party00.sk/images/my-photo-wall.jpg" />
     </Helmet>
   );
 };
