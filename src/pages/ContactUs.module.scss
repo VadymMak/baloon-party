@@ -1,212 +1,184 @@
 .contactPage {
-  position: relative; /* Needed for overlay positioning */
-  background: url("../assets/contact-background-upd.jpg") no-repeat center
-    center;
+  position: relative;
+  background: url("../assets/contact-background-upd.jpg") no-repeat center center;
   background-size: cover;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.contactPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  color: #fff;
   text-align: center;
+}
 
-  /* Overlay */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* Adjust this color and opacity */
-    z-index: 1; /* Ensures overlay stays behind content */
-    pointer-events: none;
+.content h1 {
+  font-size: 2.5rem;
+  color: #b11c1a;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #555 !important;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* Contact cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  font-size: 1.75rem;
+}
+
+.cardLabel {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.8rem !important;
+  color: #999 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardValue {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #333 !important;
+  font-weight: 600;
+}
+
+/* Messenger section */
+.content h2 {
+  font-size: 2rem;
+  color: #b11c1a;
+  margin-bottom: 1.25rem;
+}
+
+.messengers {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.messengerBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.messengerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.messengerBtn img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.messengerBtn span {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.9rem !important;
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* QR Code */
+.qrSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qrSection img {
+  width: 160px;
+  height: auto;
+}
+
+.qrSection span {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.8rem !important;
+  color: #999 !important;
+}
+
+/* Tablet */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 350px;
   }
 
-  /* Content within contactPage */
-  .content,
-  .contactSection,
-  .socialMedia,
-  .qrCodeContainer {
-    position: relative; /* Ensures these stay above the overlay */
-    z-index: 2;
-  }
-
-  .content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #b11b1a;
-  }
-
-  p {
-    font-size: 2.2rem !important;
-    margin-bottom: 1rem;
-    margin-left: 20px; /* Added left margin for mobile */
-    margin-right: 20px; /* Added right margin for mobile */
-    z-index: 2; /* Ensures the paragraph stays above the overlay */
-  }
-
-  /* Contact Section */
-  .contactSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-  }
-
-  .contactGroup {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Icons - Ensure uniform size for phone and Instagram */
-  .phoneIcon,
-  .instagramIcon img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-
-  .contactItem {
+  .content h1 {
     font-size: 2rem;
-    color: #1e88e5;
-    text-decoration: none;
   }
 
-  .socialMedia {
-    width: 100%;
-    display: flex;
+  .messengers {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 10px 0;
-    margin-top: 1rem;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #1e88e5;
-      font-size: 4rem !important;
-    }
-
-    .instagramIcon {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .balonPartyText {
-      font-size: 2rem;
-      padding: 0 1.8rem;
-    }
-
-    .qrCodeContainer {
-      display: flex;
-      margin-top: 100px;
-      padding-bottom: 10px;
-    }
-
-    .qrCode {
-      width: 150px;
-      height: auto;
-      z-index: 10;
-    }
   }
 
-  /* Media Queries for Responsiveness */
-  @media (max-width: 1024px) {
-    h1 {
-      font-size: 2.2rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
-
-    .contactGroup {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .phoneIcon,
-    .instagramIcon img {
-      width: 35px;
-      height: 35px;
-    }
-
-    .contactItem {
-      font-size: 1.1rem;
-    }
-
-    .qrCode {
-      width: 500px;
-    }
+  .messengerBtn {
+    width: 200px;
+    justify-content: center;
   }
 
-  @media (max-width: 768px) {
-    .contactPage {
-      padding: 0 10px;
-    }
-    .content {
-      padding: 0 30px; /* Add more padding on the sides for mobile view */
-      p {
-        font-size: 1.4rem !important;
-        margin: 0 20px; /* Ensure proper text spacing on smaller screens */
-        z-index: 2; /* Ensures text stays above the overlay */
-        width: 70%;
-      }
-    }
-
-    .content h1 {
-      margin: 0 30px; /* Adjust margin for better spacing */
-      font-size: 2rem;
-    }
-
-    .content .contactGroup {
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1rem; /* Space between contact items */
-    }
-
-    .phoneIcon,
-    .instagramIcon img {
-      width: 30px;
-      height: 30px;
-    }
-
-    .contactItem {
-      font-size: 1rem;
-    }
-
-    .socialMedia {
-      flex-direction: column;
-      width: 100%;
-      margin-top: 0.5rem;
-
-      .balonPartyText {
-        font-size: 1.2rem;
-      }
-    }
-
-    .qrCodeContainer {
-      margin-top: 0.5rem;
-      padding-bottom: 0;
-    }
-
-    .qrCode img {
-      width: 200px;
-      height: 200px;
-    }
+  .qrSection img {
+    width: 130px;
   }
 }
