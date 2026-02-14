@@ -31,6 +31,13 @@
     "priceListLink": "Переглянути наш прайс-лист"
   },
 
+  "sliderBirthday": "День народження",
+  "sliderDecorations": "Декорації",
+  "sliderChristening": "Хрещення",
+  "sliderFloral": "Квіткові",
+  "sliderHolidays": "Свята",
+  "sliderGift": "Подарунок",
+
   "gallery": {
     "title": "Галерея наших декорацій з повітряних кульок",
     "aboutCompanyTitle": "Про нашу компанію",

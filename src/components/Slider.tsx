@@ -1,52 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./Slider.module.scss";
-
 import { useTranslation } from "react-i18next";
 
 const images = [
-  { id: 1, src: "/images/gallery/slide_1.jpg", label: "Narodeniny" },
-  { id: 2, src: "/images/gallery/slide_2.jpg", label: "Dekorácie" },
-  { id: 3, src: "/images/gallery/slide_3.jpg", label: "Krst dieťaťa" },
-  { id: 4, src: "/images/gallery/slide_4.jpg", label: "Kvetinové" },
-  { id: 5, src: "/images/gallery/slide_5.jpg", label: "Prázdniny" },
-  { id: 6, src: "/images/gallery/slide_6.jpg", label: "Darček" },
+  { id: 1, src: "/images/gallery/slide_1.jpg", labelKey: "sliderBirthday" },
+  { id: 2, src: "/images/gallery/slide_2.jpg", labelKey: "sliderDecorations" },
+  { id: 3, src: "/images/gallery/slide_3.jpg", labelKey: "sliderChristening" },
+  { id: 4, src: "/images/gallery/slide_4.jpg", labelKey: "sliderFloral" },
+  { id: 5, src: "/images/gallery/slide_5.jpg", labelKey: "sliderHolidays" },
+  { id: 6, src: "/images/gallery/slide_6.jpg", labelKey: "sliderGift" },
 ];
 
 const Slider: React.FC = () => {
-  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImageSrc, setModalImageSrc] = useState<string>("");
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [modalImageSrc, setModalImageSrc] = useState("");
+  const [isPaused, setIsPaused] = useState(false);
   const { t } = useTranslation();
 
-  // Move to the next slide
-  const nextSlide = () => {
-    setActiveImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  const nextSlide = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  }, []);
 
-  // Move to the previous slide
-  const prevSlide = () => {
-    setActiveImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+  const prevSlide = useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || isModalOpen) return;
+    const interval = setInterval(nextSlide, 4000);
+    return () => clearInterval(interval);
+  }, [isPaused, isModalOpen, nextSlide]);
+
+  const getVisibleImages = () => {
+    return [0, 1, 2].map(
+      (offset) => images[(activeIndex + offset) % images.length]
     );
   };
 
-  // Automatically change slides every 5 seconds
-  useEffect(() => {
-    if (!isHovered) {
-      // Only start the interval if not hovered
-      const interval = setInterval(nextSlide, 5000);
-      return () => clearInterval(interval); // Cleanup on component unmount
-    }
-  }, [isHovered]); // Dependency array includes `isHovered`
-
-  // Handle click on image for full-screen modal
-  const handleImageClick = (src: string) => {
+  const openModal = (src: string) => {
     setModalImageSrc(src);
     setIsModalOpen(true);
   };
 
-  // Close the modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -54,47 +50,68 @@ const Slider: React.FC = () => {
   return (
     <section
       className={styles.slider}
-      onMouseEnter={() => setIsHovered(true)} // Stop interval on hover
-      onMouseLeave={() => setIsHovered(false)} // Restart interval on hover leave
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       <h2>{t("ourProducts")}</h2>
+
       <div className={styles.sliderContainer}>
-        <button className={styles.arrowButton} onClick={prevSlide}>
+        <button
+          className={`${styles.arrowButton} ${styles.arrowLeft}`}
+          onClick={prevSlide}
+          aria-label="Previous slide"
+        >
           &#8249;
         </button>
-        <div className={styles.imageContainer}>
-          {/* Render 3 images at a time */}
-          <div className={styles.slideRow}>
-            {images
-              .map((_, i) => images[(activeImageIndex + i) % images.length])
-              .slice(0, 3)
-              .map((image) => (
-                <div
-                  key={image.id}
-                  className={styles.imageWrapper}
-                  onClick={() => handleImageClick(image.src)}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.label}
-                    className={styles.slideImage}
-                  />
-                  <div className={styles.caption}>{image.label}</div>
-                </div>
-              ))}
-          </div>
+
+        <div className={styles.slideRow}>
+          {getVisibleImages().map((image) => (
+            <div
+              key={image.id}
+              className={styles.imageWrapper}
+              onClick={() => openModal(image.src)}
+            >
+              <img
+                src={image.src}
+                alt={t(image.labelKey)}
+                className={styles.slideImage}
+                loading="lazy"
+              />
+              <div className={styles.caption}>{t(image.labelKey)}</div>
+            </div>
+          ))}
         </div>
-        <button className={styles.arrowButton} onClick={nextSlide}>
+
+        <button
+          className={`${styles.arrowButton} ${styles.arrowRight}`}
+          onClick={nextSlide}
+          aria-label="Next slide"
+        >
           &#8250;
         </button>
       </div>
 
-      {/* Full-screen Modal */}
+      {/* Dots */}
+      <div className={styles.dots}>
+        {images.map((_, i) => (
+          <button
+            key={i}
+            className={`${styles.dot} ${i === activeIndex ? styles.dotActive : ""}`}
+            onClick={() => setActiveIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Modal */}
       {isModalOpen && (
         <div className={styles.modal} onClick={closeModal}>
+          <button className={styles.modalClose} onClick={closeModal}>
+            &times;
+          </button>
           <img
             src={modalImageSrc}
-            alt="Full Screen"
+            alt="Full screen view"
             className={styles.modalImage}
           />
         </div>
