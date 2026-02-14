@@ -1,12 +1,9 @@
 import React from "react";
-import styles from "./About.module.scss"; // Import SCSS module
+import styles from "./About.module.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
-
 import { useTranslation } from "react-i18next";
-
-//Commit for test
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -15,22 +12,20 @@ const About: React.FC = () => {
     <section className={styles.about}>
       <div className={styles.textContainer}>
         <h2>{t("aboutUs")}</h2>
-        <p>{t("aboutUsIntroduction")}</p>
+        <p className={styles.intro}>{t("aboutUsIntroduction")}</p>
         <p>{t("aboutUsGoal")}</p>
-        <p>{t("aboutUsSpecialEvents")}</p>
-        <p>{t("aboutUsProposition")}</p>
-        <p>{t("aboutUsThanks")}</p>
         <div className={styles.priceListLink}>
           <Link to="/price-list">
-            <FontAwesomeIcon icon={faTag} /> Zobraziť náš cenník
+            <FontAwesomeIcon icon={faTag} /> {t("view_price_list")}
           </Link>
         </div>
       </div>
       <div className={styles.imageContainer}>
         <img
           src="/images/my-photo-wall.jpg"
-          alt="Our Decorations"
+          alt="Balónové dekorácie - naša práca"
           className={styles.image}
+          loading="lazy"
         />
       </div>
     </section>

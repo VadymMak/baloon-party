@@ -1,82 +1,113 @@
 .about {
-  display: flex; /* Use flexbox for layout */
+  display: flex;
   align-items: center;
-  justify-content: space-between; /* Distribute space between text and image */
-  padding: 2rem;
-  margin-top: -30px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Light background for the section */
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #333;
-  text-align: left;
+}
 
-  .textContainer {
-    flex: 1; /* Let text take up remaining space */
-    margin-right: 20px; /* Space between text and image */
-  }
+.textContainer {
+  flex: 1;
+}
 
-  h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    text-indent: 20px;
-    text-align: center;
-  }
+.textContainer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #b11c1a;
+}
 
-  p {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-indent: 20px;
+.intro {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-indent: 20px;
+}
+
+.textContainer p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-indent: 20px;
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 45%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.priceListLink {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.priceListLink a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #b11c1a;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(177, 28, 26, 0.25);
+}
+
+.priceListLink a:hover {
+  background-color: #8e1614;
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
   }
 
   .imageContainer {
-    flex: 1; /* Let image take up space on the right */
-    max-width: 45%; /* Limit the width of the image container */
+    max-width: 100%;
   }
 
-  .image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+  .textContainer h2 {
+    font-size: 2rem;
   }
 
-  .priceListLink {
-    margin-top: 1rem;
-    text-align: center;
+  .textContainer p {
+    font-size: 1.3rem;
+  }
+}
 
-    a {
-      font-size: 1.8rem;
-      color: #b11b1a;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-
-      &:hover {
-        color: #8b0000;
-      }
-
-      svg {
-        margin-right: 0.5rem;
-      }
-    }
+/* Mobile */
+@media (max-width: 480px) {
+  .about {
+    padding: 1.5rem 1rem;
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column; /* Stack text and image on top of each other for smaller screens */
-    .imageContainer {
-      max-width: 100%;
-      margin-top: 20px; /* Space between text and image */
-    }
+  .textContainer h2 {
+    font-size: 1.8rem;
   }
 
-  @media (max-width: 480px) {
-    h2 {
-      font-size: 1.5rem;
-    }
-    p {
-      font-size: 1rem;
-    }
+  .intro,
+  .textContainer p {
+    font-size: 1.1rem;
+  }
+
+  .priceListLink a {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.5rem;
   }
 }
