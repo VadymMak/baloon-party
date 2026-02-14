@@ -1,6 +1,6 @@
 .slider {
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 3rem 1.5rem 2rem;
   background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -12,11 +12,7 @@
 
 .sliderContainer {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 100%;
-  padding: 0 2.5rem;
 }
 
 .slideRow {
@@ -61,11 +57,11 @@
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
   color: #fff;
   padding: 1.5rem 0.75rem 0.75rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: "Dancing Script", cursive;
 }
 
-/* Arrows */
+/* Arrows - overlay on images */
 .arrowButton {
   position: absolute;
   top: 50%;
@@ -73,9 +69,9 @@
   background-color: rgba(177, 28, 26, 0.8);
   color: #fff;
   border: none;
-  font-size: 1.8rem;
-  width: 40px;
-  height: 40px;
+  font-size: 1.6rem;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
@@ -91,11 +87,11 @@
 }
 
 .arrowLeft {
-  left: 0;
+  left: 0.5rem;
 }
 
 .arrowRight {
-  right: 0;
+  right: 0.5rem;
 }
 
 /* Dots */
@@ -167,7 +163,7 @@
   }
 
   .caption {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -186,9 +182,9 @@
   }
 
   .arrowButton {
-    width: 32px;
-    height: 32px;
-    font-size: 1.4rem;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
   }
 
   .caption {

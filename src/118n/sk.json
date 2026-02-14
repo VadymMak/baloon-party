@@ -31,6 +31,10 @@
     "priceListLink": "View Our Price List"
   },
 
+  "articleReadMore": "Čítať viac",
+  "articleReadLess": "Skryť",
+  "articleFindOnMap": "Nájsť na mape",
+
   "sliderBirthday": "Narodeniny",
   "sliderDecorations": "Dekorácie",
   "sliderChristening": "Krst dieťaťa",
@@ -48,6 +52,8 @@
     "lightboxAlt": "Zobraziť na celú obrazovku",
     "imageAltPrefix": "Dekoratívna balónová výzdoba s názvom "
   },
+
+  "footerDesignBy": "Dizajn značky:",
 
   "contact": {
     "title": "Kontaktujte nás",

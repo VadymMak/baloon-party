@@ -20,16 +20,20 @@
 }
 
 .intro {
-  font-size: 1.6rem;
+  font-size: 1rem !important;
+  font-family: Arial, sans-serif !important;
+  color: #555 !important;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   text-indent: 20px;
 }
 
 .textContainer p {
-  font-size: 1.5rem;
+  font-size: 0.95rem !important;
+  font-family: Arial, sans-serif !important;
+  color: #555 !important;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   text-indent: 20px;
 }
 

@@ -31,6 +31,10 @@
     "priceListLink": "Переглянути наш прайс-лист"
   },
 
+  "articleReadMore": "Читати більше",
+  "articleReadLess": "Сховати",
+  "articleFindOnMap": "Знайти на мапі",
+
   "sliderBirthday": "День народження",
   "sliderDecorations": "Декорації",
   "sliderChristening": "Хрещення",
@@ -48,6 +52,8 @@
     "lightboxAlt": "Перегляд на повний екран",
     "imageAltPrefix": "Декорація з повітряних кульок під назвою "
   },
+
+  "footerDesignBy": "Дизайн бренду:",
 
   "contact": {
     "title": "Зв'яжіться з нами",

@@ -2,23 +2,12 @@
    Global Styles
    ======================== */
 
-/* Base font for all languages */
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
   line-height: 1.6;
-}
-
-/* Decorative font for Slovak */
-html[lang="sk"] body {
-  font-family: "Dancing Script", cursive;
-}
-
-/* Decorative font for Ukrainian */
-html[lang="ua"] body {
-  font-family: "Dancing Script", cursive;
 }
 
 /* ========================
@@ -33,8 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-family: "Dancing Script", cursive;
-  color: #2684be;
+  margin: 0;
 }
 
 a {

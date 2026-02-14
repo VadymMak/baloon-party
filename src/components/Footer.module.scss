@@ -1,166 +1,108 @@
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-li {
-  list-style: none;
-  color: #333;
-}
-
 .footer {
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.6) 0%,
     rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0.4) 100%
-  ); // Light background color
-  padding: 2rem; // Padding of 2rem for top/bottom and left/right
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  padding: 2rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center; // Center items horizontally
-  text-align: center;
+  align-items: center;
+  gap: 1.2rem;
+}
 
-  // Contact Info Section
-  .contactInfo {
-    display: flex;
-    flex-wrap: wrap; // Allow wrapping for smaller screens
-    justify-content: space-around; // Distribute items evenly
-    align-items: center; // Align items to center vertically
-    width: 100%; // Take full width
-    margin-bottom: 1rem; // Space below the contact info
+/* Contact links */
+.contactRow {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .contactGroup {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #333;
-      margin: 0 1rem;
+.contactLink {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-      .contactItem {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 80px;
-        text-decoration: none;
+.contactLink:hover {
+  color: #b11c1a;
+}
 
-        span {
-          font-size: 1.2rem;
-          color: #1d88e5;
-        }
+/* Social media icons */
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-        .contactIcon {
-          width: 80px;
-          height: 80px;
-          margin-bottom: 0.5rem;
-        }
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        .phoneIcon {
-          padding-top: 10px;
-          width: 80px;
-          height: 80px;
-          margin-bottom: 0.6rem;
-        }
-      }
-    }
-  }
+.socials img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-  // Social Media Group
-  .socialMediaGroup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
+.socials img:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
 
-    .socialMedia {
-      display: flex;
-      justify-content: center; // Center social media icons
-      gap: 1.2rem; // Increased gap between icons
-      flex-wrap: wrap; // Allow icons to wrap to next line on small screens
-      width: 100%; // Ensure it takes full width on mobile
+/* Designer credit */
+.designerCredit {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.8rem !important;
+  color: #999;
+}
 
-      .socialItem {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        width: 70px; // Set a consistent size for each social icon
+.designerCredit a {
+  color: #2584be;
+  text-decoration: none;
+}
 
-        .socialIcon {
-          width: 70px;
-          height: 70px;
-          transition: transform 0.3s ease;
+.designerCredit a:hover {
+  text-decoration: underline;
+}
 
-          &:hover {
-            transform: scale(1.1); // Hover effect
-          }
-        }
-      }
-    }
+/* Copyright */
+.copyright {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.8rem !important;
+  color: #999;
+}
 
-    .contactText {
-      margin: 0.5rem 0;
-      font-weight: bold;
-      color: #333;
-    }
-  }
-
-  // Media Queries for Responsiveness
-  @media (max-width: 1055px) {
-    .contactGroup {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .contactInfo {
-      flex-direction: row; // Arrange in a row on this screen size
-      justify-content: space-between; // Space between the items
-      row-gap: 3rem;
-      .contactGroup {
-        margin: 0 1rem; // Horizontal space between contact groups
-      }
-    }
-
-    // Ensures the envelope and phone are in the upper row
-    .socialMediaGroup {
-      width: 100%;
-      flex-direction: column; // Keep social media in the lower row
-      align-items: center;
-      margin-top: 1rem;
-
-      .socialMedia {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 4rem;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .contactInfo {
-      flex-direction: row; // Row for tablet
-      align-items: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding: 1rem; // Reduced padding for mobile
-    .contactInfo {
-      flex-direction: column; // Stack contact info vertically
-      .contactGroup {
-        margin: 0.9rem 0; // Smaller vertical space on mobile
-      }
-    }
-    .socialMedia {
-      flex-direction: column; // Stack social media icons vertically
-      gap: 1rem; // Reduce space between social icons
-    }
+/* Tablet */
+@media (max-width: 768px) {
+  .contactRow {
+    gap: 1.5rem;
   }
 }
 
-.property {
-  padding-top: 30px;
+/* Mobile */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .contactRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .socials img {
+    width: 36px;
+    height: 36px;
+  }
 }
