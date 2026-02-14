@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
+  const bgImage = `${process.env.PUBLIC_URL}/images/my-photo-wall.jpg`;
 
   return (
-    <section className={styles.hero}>
+    <section
+      className={styles.hero}
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
       <div className={styles.overlay} />
       <div className={styles.content}>
         <h1>{t("greeting")}</h1>
