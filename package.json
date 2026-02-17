@@ -59,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/i18next-browser-languagedetector": "^3.0.0",
     "@types/react-i18next": "^8.1.0"
   }

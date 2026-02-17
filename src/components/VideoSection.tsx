@@ -67,7 +67,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ urls }) => {
     }
 
     return () => observer.disconnect();
-  }, [loadScript]);
+  }, [loadScript, urls]);
 
   return (
     <section className={styles.videoSection} ref={sectionRef}>
