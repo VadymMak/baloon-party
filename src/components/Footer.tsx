@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import instagramImg from "../assets/icons/instagram.jpg";
-import telegramImg from "../assets/icons/telegram.jpg";
-import whatsappImg from "../assets/icons/whatsapp.jpg";
-import facebookImg from "../assets/icons/facebook.jpg";
-import tiktokIcon from "../assets/icons/tiktok.jpg";
+import instagramImg from "../assets/icons/instagram.webp";
+import telegramImg from "../assets/icons/telegram.webp";
+import whatsappImg from "../assets/icons/whatsapp.webp";
+import facebookImg from "../assets/icons/facebook.webp";
+import tiktokIcon from "../assets/icons/tiktok.webp";
 import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {

@@ -2,11 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styles from "./ContactUs.module.scss";
 import { useTranslation } from "react-i18next";
-import qrCodeIcon from "../assets/icons/frame-removebg-preview.png";
-import instagramImg from "../assets/icons/instagram.jpg";
-import telegramImg from "../assets/icons/telegram.jpg";
-import whatsappImg from "../assets/icons/whatsapp.jpg";
-import facebookImg from "../assets/icons/facebook.jpg";
+import qrCodeIcon from "../assets/icons/frame-removebg-preview.webp";
+import instagramImg from "../assets/icons/instagram.webp";
+import telegramImg from "../assets/icons/telegram.webp";
+import whatsappImg from "../assets/icons/whatsapp.webp";
+import facebookImg from "../assets/icons/facebook.webp";
 
 const ContactPage: React.FC = () => {
   const { t } = useTranslation();

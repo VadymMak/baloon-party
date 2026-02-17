@@ -21,21 +21,21 @@ const Layout: React.FC = () => {
   // Disable/enable scroll when the menu is open/closed
   useEffect(() => {
     if (isNavOpen) {
-      document.body.style.overflow = "hidden"; // Disable scroll
-      document.documentElement.style.overflow = "hidden"; // Disable scroll for html
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Enable scroll
-      document.documentElement.style.overflow = "auto"; // Enable scroll for html
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup
-      document.documentElement.style.overflow = "auto"; // Cleanup
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     };
   }, [isNavOpen]);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${isPriceListPage ? styles.wrapperNoHeader : ""}`}>
       {!isPriceListPage && <Header toggleNav={toggleNav} />}
       {!isPriceListPage && (
         <SideMenu isOpen={isNavOpen} toggleMenu={toggleNav} />

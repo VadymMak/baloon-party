@@ -14,11 +14,16 @@
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0);
   width: 100%;
   max-width: 1200px;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.headerHidden {
+  transform: translateX(-50%) translateY(-100%);
 }
 
 .logoContainer {
@@ -51,7 +56,7 @@
   display: inline-block;
   width: 100px;
   height: 170px;
-  background-image: url("../assets/one-ballon-background-removebg-preview.png");
+  background-image: url("../assets/one-ballon-background-removebg-preview.webp");
   background-size: cover;
   background-position: center;
   color: #2584be;

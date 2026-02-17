@@ -10,19 +10,19 @@ const Testimonials: React.FC = () => {
       id: 1,
       name: "Viktoriia Bieliaieva",
       feedback: t("testimonials.testimonial1"),
-      picture: "/images/testempnials_nikolay.jpg",
+      picture: "/images/testempnials_nikolay.webp",
     },
     {
       id: 2,
       name: "Naděžda Javor",
       feedback: t("testimonials.testimonial2"),
-      picture: "/images/testemonials_nadja.jpg",
+      picture: "/images/testemonials_nadja.webp",
     },
     {
       id: 3,
       name: "Galina",
       feedback: t("testimonials.testimonial3"),
-      picture: "/images/testemonials_market.jpg",
+      picture: "/images/testemonials_market.webp",
     },
   ];
 

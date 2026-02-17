@@ -1,11 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./PriceList.module.scss";
-
-import instagramImg from "../assets/icons/instagram.jpg";
-import phoneImg from "../assets/icons/phone.jpg";
-import qrCodeIcon from "../assets/icons/frame-removebg-preview.png";
-import logoDeselected from "../assets/logo-deselected.svg";
+import qrCodeIcon from "../assets/icons/frame-removebg-preview.webp";
+import instagramImg from "../assets/icons/instagram.webp";
 
 const PriceList: React.FC = () => {
   const navigate = useNavigate();
@@ -14,70 +11,65 @@ const PriceList: React.FC = () => {
     navigate(-1);
   };
 
-  const phoneNumber = "+421(95)026-63-20"; // Define your phone number
-  const instagramProfileUrl = `https://www.instagram.com/username${phoneNumber.replace(
-    /[^\w]/g,
-    ""
-  )}`;
-  const isMobile = window.innerWidth <= 768;
-
   return (
     <div className={styles.priceList}>
-      <div className={styles.topBar}>
-        <img src={logoDeselected} alt="Logo" className={styles.logo} />
-        <h1 className={styles.pageTitle}>Price List</h1>
-      </div>
-
       <button className={styles.closeButton} onClick={handleClose}>
         ×
       </button>
 
-      <ul className={styles.productList}>
-        <li>Mini girlanda (dĺžka 1,5 m) ................... 100 €</li>
-        <li>Stredná girlanda (2 m) ...............................120 €</li>
-        <li>Veľká girlanda (2,5 m) ..................................150 €</li>
-        <li>
-          Balónik s héliom (kus)........................................ 5 €
-        </li>
-      </ul>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Cenník</h1>
 
-      <p className={styles.specialOffer}>
-        Ponúkame tiež špeciálne pozadia pre tematické oslavy, ostatné dekorácie
-        a ďalšie individuálne prvky na mieru podľa vašich predstáv.
-      </p>
-
-      <p className={styles.personalCalculation}>
-        Vypočítať cenu individuálnej výzdoby
-      </p>
-
-      <div className={styles.contactSection}>
-        {/* Phone Section */}
-        <div className={styles.contactGroup}>
-          <img src={phoneImg} alt="Phone" className={styles.phoneIcon} />
-          <a
-            href={isMobile ? `tel:${phoneNumber}` : instagramProfileUrl}
-            className={styles.contactItem}
-          >
-            {phoneNumber}
-          </a>
+        <div className={styles.items}>
+          <div className={styles.item}>
+            <span className={styles.name}>Mini girlanda (1,5 m)</span>
+            <span className={styles.dots}></span>
+            <span className={styles.price}>100 €</span>
+          </div>
+          <div className={styles.item}>
+            <span className={styles.name}>Stredná girlanda (2 m)</span>
+            <span className={styles.dots}></span>
+            <span className={styles.price}>120 €</span>
+          </div>
+          <div className={styles.item}>
+            <span className={styles.name}>Veľká girlanda (2,5 m)</span>
+            <span className={styles.dots}></span>
+            <span className={styles.price}>150 €</span>
+          </div>
+          <div className={styles.item}>
+            <span className={styles.name}>Balónik s héliom (kus)</span>
+            <span className={styles.dots}></span>
+            <span className={styles.price}>5 €</span>
+          </div>
         </div>
 
-        {/* Instagram and Balón Party Text */}
-        <div className={styles.socialMedia}>
+        <div className={styles.divider}></div>
+
+        <p className={styles.note}>
+          Ponúkame tiež špeciálne pozadia pre tematické oslavy, ostatné
+          dekorácie a ďalšie individuálne prvky na mieru podľa vašich predstáv.
+        </p>
+
+        <p className={styles.cta}>Vypočítať cenu individuálnej výzdoby</p>
+
+        <div className={styles.contact}>
+          <a href="tel:+421950266320" className={styles.contactLink}>
+            ☎ +421 (95) 026-63-20
+          </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/baloon_party00"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.instagramIcon}
+            className={styles.contactLink}
           >
-            <img src={instagramImg} alt="Instagram" />
+            <img src={instagramImg} alt="Instagram" className={styles.icon} />
+            Balón Party00
           </a>
-          <span className={styles.balonPartyText}>Balón Party00</span>
         </div>
 
-        {/* QR Code Section */}
-        <div className={styles.qrCode}>
-          <img src={qrCodeIcon} alt="QR Code" />
+        <div className={styles.qr}>
+          <img src={qrCodeIcon} alt="QR Code – Instagram" />
+          <span>Naskenujte pre Instagram</span>
         </div>
       </div>
     </div>

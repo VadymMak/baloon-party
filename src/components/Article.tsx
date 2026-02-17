@@ -16,14 +16,14 @@ const articles: IArticle[] = [
   {
     titleKey: "christmas_celebration_title",
     descriptionKey: "christmas_celebration_description",
-    imageSrc: "/images/article_1.jpg",
+    imageSrc: "/images/article_1.webp",
     imageAltKey: "christmas_celebration_title",
     imageLeft: false,
   },
   {
     titleKey: "dia_de_los_muertos_celebration_title",
     descriptionKey: "dia_de_los_muertos_celebration_description",
-    imageSrc: "/images/article_2.jpg",
+    imageSrc: "/images/article_2.webp",
     imageAltKey: "dia_de_los_muertos_celebration_title",
     imageLeft: true,
     googleMapLink: "https://maps.app.goo.gl/ReNMpKffxdto3GGf9",
@@ -32,7 +32,7 @@ const articles: IArticle[] = [
   {
     titleKey: "halloween_party_celebration_title",
     descriptionKey: "halloween_party_celebration_description",
-    imageSrc: "/images/article_3.jpg",
+    imageSrc: "/images/article_3.webp",
     imageAltKey: "halloween_party_celebration_title",
     imageLeft: false,
   },

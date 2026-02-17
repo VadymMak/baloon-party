@@ -5,7 +5,7 @@ import VideoSection from "../components/VideoSection";
 
 const galleryImages = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
-  url: `/images/gallery/gallery_${i + 1}.jpg`,
+  url: `/images/gallery/gallery_${i + 1}.webp`,
 }));
 
 const videoUrls = [

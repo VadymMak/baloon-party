@@ -28,7 +28,7 @@ const PageMeta: React.FC = () => {
         property="og:description"
         content="Vytvárame jedinečné dekorácie a fotosteny pre nezabudnuteľné chvíle a oslavy v Trenčíne a okolí."
       />
-      <meta property="og:image" content="https://baloon-party00.sk/images/my-photo-wall.jpg" />
+      <meta property="og:image" content="https://baloon-party00.sk/images/my-photo-wall.webp" />
       <meta property="og:url" content="https://baloon-party00.sk/" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="sk_SK" />
@@ -44,7 +44,7 @@ const PageMeta: React.FC = () => {
         name="twitter:description"
         content="Vytvárame jedinečné dekorácie a fotosteny pre nezabudnuteľné chvíle a oslavy v Trenčíne a okolí."
       />
-      <meta name="twitter:image" content="https://baloon-party00.sk/images/my-photo-wall.jpg" />
+      <meta name="twitter:image" content="https://baloon-party00.sk/images/my-photo-wall.webp" />
     </Helmet>
   );
 };

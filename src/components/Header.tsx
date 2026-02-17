@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
@@ -24,6 +24,34 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
     (state: RootState) => state.language.language
   );
 
+  // Hide/show on scroll
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+            setHidden(true);
+          } else {
+            setHidden(false);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleLanguageChange = (lang: string) => {
     dispatch(setLanguage(lang));
     i18n.changeLanguage(lang);
@@ -42,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${hidden ? styles.headerHidden : ""}`}>
       <div className={styles.logoContainer}>
         <Link to="/">
           <img src={Logo} alt="Balón Party Logo" className={styles.logo} />

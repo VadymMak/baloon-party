@@ -22,7 +22,7 @@ const About: React.FC = () => {
       </div>
       <div className={styles.imageContainer}>
         <img
-          src="/images/my-photo-wall.jpg"
+          src="/images/my-photo-wall.webp"
           alt="Balónové dekorácie - naša práca"
           className={styles.image}
           loading="lazy"

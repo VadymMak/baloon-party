@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const bgImage = `${process.env.PUBLIC_URL}/images/my-photo-wall.jpg`;
+  const bgImage = `${process.env.PUBLIC_URL}/images/my-photo-wall.webp`;
 
   return (
     <section

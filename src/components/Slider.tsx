@@ -3,12 +3,12 @@ import styles from "./Slider.module.scss";
 import { useTranslation } from "react-i18next";
 
 const images = [
-  { id: 1, src: "/images/gallery/slide_1.jpg", labelKey: "sliderBirthday" },
-  { id: 2, src: "/images/gallery/slide_2.jpg", labelKey: "sliderDecorations" },
-  { id: 3, src: "/images/gallery/slide_3.jpg", labelKey: "sliderChristening" },
-  { id: 4, src: "/images/gallery/slide_4.jpg", labelKey: "sliderFloral" },
-  { id: 5, src: "/images/gallery/slide_5.jpg", labelKey: "sliderHolidays" },
-  { id: 6, src: "/images/gallery/slide_6.jpg", labelKey: "sliderGift" },
+  { id: 1, src: "/images/gallery/slide_1.webp", labelKey: "sliderBirthday" },
+  { id: 2, src: "/images/gallery/slide_2.webp", labelKey: "sliderDecorations" },
+  { id: 3, src: "/images/gallery/slide_3.webp", labelKey: "sliderChristening" },
+  { id: 4, src: "/images/gallery/slide_4.webp", labelKey: "sliderFloral" },
+  { id: 5, src: "/images/gallery/slide_5.webp", labelKey: "sliderHolidays" },
+  { id: 6, src: "/images/gallery/slide_6.webp", labelKey: "sliderGift" },
 ];
 
 const Slider: React.FC = () => {
