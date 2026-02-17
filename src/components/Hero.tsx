@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 import React from "react";
 import styles from "./Hero.module.scss";
 import { useTranslation } from "react-i18next";
@@ -6,13 +5,17 @@ import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const bgImage = `${process.env.PUBLIC_URL}/images/my-photo-wall.webp`;
 
   return (
-    <section
-      className={styles.hero}
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
+    <section className={styles.hero}>
+      <img
+        src="/images/my-photo-wall.webp"
+        alt="Balónové dekorácie"
+        className={styles.bgImage}
+        width={1200}
+        height={800}
+        fetchPriority="high"
+      />
       <div className={styles.overlay} />
       <div className={styles.content}>
         <h1>{t("greeting")}</h1>
