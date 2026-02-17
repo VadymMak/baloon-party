@@ -73,7 +73,13 @@ const Header: React.FC<HeaderProps> = ({ toggleNav }) => {
     <header className={`${styles.header} ${hidden ? styles.headerHidden : ""}`}>
       <div className={styles.logoContainer}>
         <Link to="/">
-          <img src={Logo} alt="Balón Party Logo" className={styles.logo} />
+          <img
+            src={Logo}
+            alt="Balón Party Logo"
+            className={styles.logo}
+            width={160}
+            height={160}
+          />
         </Link>
       </div>
       <nav className={styles.nav}>

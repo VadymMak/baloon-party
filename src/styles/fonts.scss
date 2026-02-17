@@ -1,11 +1,12 @@
-/* ========================
-   Font Faces
-   ======================== */
+/* src/styles/fonts.scss */
 
 @font-face {
   font-family: "Dancing Script";
   src: url("../fonts/GreatVibes-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Prevents invisible text during font load */
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 20%;
 }

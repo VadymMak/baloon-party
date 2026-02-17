@@ -62,7 +62,9 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
             <img
               src={currentLanguageDetails.flag}
               alt={currentLanguageDetails.name}
-              style={{ width: "20px", marginRight: "8px" }}
+              width={20}
+              height={15}
+              style={{ marginRight: "8px" }}
             />
             {currentLanguageDetails.code}
           </>
@@ -79,7 +81,9 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
                 <img
                   src={lang.flag}
                   alt={lang.name}
-                  style={{ width: "20px", marginRight: "8px" }}
+                  width={20}
+                  height={15}
+                  style={{ marginRight: "8px" }}
                 />
                 {lang.code}
               </button>

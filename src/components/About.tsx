@@ -26,6 +26,8 @@ const About: React.FC = () => {
           alt="Balónové dekorácie - naša práca"
           className={styles.image}
           loading="lazy"
+          width={600}
+          height={400}
         />
       </div>
     </section>
