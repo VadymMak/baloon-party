@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./VideoSection.module.scss";
 import { useTranslation } from "react-i18next";
 
@@ -8,52 +8,108 @@ interface VideoSectionProps {
 
 const VideoSection: React.FC<VideoSectionProps> = ({ urls }) => {
   const { t } = useTranslation();
+  const [loadedIndexes, setLoadedIndexes] = useState<Set<number>>(new Set());
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Load Instagram script only once, only when needed
+  const loadScript = useCallback(() => {
+    if (scriptLoaded || document.querySelector('script[src*="instagram.com/embed"]')) {
+      if (window.instgrm?.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = "https://www.instagram.com/embed.js";
     script.async = true;
-    document.body.appendChild(script);
-
     script.onload = () => {
+      setScriptLoaded(true);
       if (window.instgrm?.Embeds) {
         window.instgrm.Embeds.process();
       }
     };
+    document.body.appendChild(script);
+  }, [scriptLoaded]);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
+  // Process embeds when new ones are loaded
   useEffect(() => {
-    if (window.instgrm?.Embeds) {
-      window.instgrm.Embeds.process();
+    if (loadedIndexes.size > 0 && window.instgrm?.Embeds) {
+      setTimeout(() => {
+        window.instgrm.Embeds.process();
+      }, 100);
     }
-  }, [urls]);
+  }, [loadedIndexes]);
+
+  const handleLoadEmbed = (index: number) => {
+    setLoadedIndexes((prev) => new Set(prev).add(index));
+    loadScript();
+  };
+
+  // Auto-load first 2 when section scrolls into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setLoadedIndexes(new Set(urls.map((_, i) => i)));
+            loadScript();
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [loadScript]);
 
   return (
-    <section className={styles.videoSection}>
+    <section className={styles.videoSection} ref={sectionRef}>
       <h2>{t("watchOurWork")}</h2>
       <div className={styles.videoGrid}>
         {urls.map((url, index) => (
           <div key={index} className={styles.videoItem}>
-            <blockquote
-              className="instagram-media"
-              data-instgrm-permalink={url}
-              data-instgrm-version="14"
-              style={{
-                maxWidth: "100%",
-                width: "100%",
-                margin: "0 auto",
-                border: "none",
-                boxShadow: "none",
-              }}
-            >
-              <a href={url} target="_blank" rel="noopener noreferrer">
-                View on Instagram
-              </a>
-            </blockquote>
+            {loadedIndexes.has(index) ? (
+              <blockquote
+                className="instagram-media"
+                data-instgrm-permalink={url}
+                data-instgrm-version="14"
+                style={{
+                  maxWidth: "100%",
+                  width: "100%",
+                  margin: "0 auto",
+                  border: "none",
+                  boxShadow: "none",
+                  padding: "0",
+                }}
+              >
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  View on Instagram
+                </a>
+              </blockquote>
+            ) : (
+              <button
+                className={styles.placeholder}
+                onClick={() => handleLoadEmbed(index)}
+                aria-label="Load Instagram video"
+              >
+                <div className={styles.playIcon}>
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="#fff">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                </div>
+                <span className={styles.loadText}>
+                  {t("loadVideo", "Načítať video")}
+                </span>
+                <span className={styles.igBadge}>Instagram</span>
+              </button>
+            )}
           </div>
         ))}
       </div>
